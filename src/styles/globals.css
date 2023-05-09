@@ -1,0 +1,126 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+.pbtn {
+  @apply text-right px-3 py-3 bg-blue-700 rounded hover:bg-blue-800 border-blue-800 border-[2px] text-base
+}
+
+.navbtn {
+  @apply text-right px-4 py-3 hover:bg-gray-900 rounded
+}
+
+.reponsiveNavBtn {
+  @apply block py-8 px-4 text-center justify-center border-b-2 border-b-gray-800 font-mid
+}
+
+
+@font-face {
+  font-family: "Reg";
+  src: url('./fonts/Reg.ttf') format('TrueType');
+}
+
+@font-face {
+  font-family: "Mid";
+  src: url('./fonts/Mid.ttf') format('TrueType');
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  font-family: 'Reg', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+
+  background: linear-gradient(180deg, #050505 0%, #020408 100%);
+
+}
+
+
+* {
+  color: #f1f1f1
+}
+
+image {
+  z-index: 20;
+}
+
+
+p,
+span {
+  z-index: 20;
+  color: #bcbcbc;
+}
+
+button {
+  z-index: 20;
+}
+
+h1 {
+  z-index: 20;
+  font-family: 'Mid', system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Open Sans',
+    'Helvetica Neue',
+    sans-serif;
+  letter-spacing: 0.05rem;
+}
+
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 0 40px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    padding: 0 24px;
+  }
+}
+
+.custom-cursor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: white;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+
+  opacity: 0.5;
+  mix-blend-mode: difference;
+  transition: opacity 0.15s ease-in-out;
+}
