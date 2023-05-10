@@ -19,7 +19,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
     </motion.div>
 
 
-    <motion.div key={router.route} initial={{ opacity: 0 }}
+    <motion.div  key={router.route} initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{
         duration: 0.5, type: "spring", stiffness: 2300,
@@ -29,9 +29,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
       <Footer />
     </motion.div>
 
-    <div>
-    
-    </div>
+
   </div >)
 
 }

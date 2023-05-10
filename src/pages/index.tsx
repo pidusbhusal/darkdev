@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 
 
 
+
 const skills = ["Front-end", "Ui Design", "Ux Design", "Interaction Design", "Logo Design", "Graphic Design", "Branding",]
 
 
@@ -56,10 +57,16 @@ export default function Home() {
             </motion.div>
 
           </div>
-          <div className=" hidden lg:flex social  justify-end">
+          <motion.div initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.3,
+              duration: 0.3, type: "spring", stiffness: 260,
+              damping: 40
+            }} className=" hidden lg:flex social  justify-end">
 
             <SocialLinks />
-          </div>
+          </motion.div>
 
         </div>
 

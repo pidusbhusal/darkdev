@@ -88,16 +88,16 @@ function Profile() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{
                                     delay: 0.4,
-                                    duration: 0.3, type: "spring", stiffness: 260,
+                                    duration: 0.6, type: "spring", stiffness: 260,
                                     damping: 40
-                                }} viewport={{ once: true, amount: 0.01 }} className="location tracking-widest sticky top-0 text-white">
+                                }} viewport={{ once: false, amount: 0.01 }} className="location tracking-widest sticky top-0 text-white">
                                 MY DOMAINS
                             </motion.span>
                             <motion.p initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{
                                     delay: 0.4,
-                                    duration: 0.3, type: "spring", stiffness: 260,
+                                    duration: 0.6, type: "spring", stiffness: 260,
                                     damping: 40
                                 }} viewport={{ once: true, amount: 0.01 }} className='max-w-sm leading-normal mt-4'>I take pleasure in devising practical solutions for distinct challenges, and these are abilities that I have acquired throughout my professional journey. </motion.p>
 
