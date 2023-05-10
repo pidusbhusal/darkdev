@@ -27,10 +27,10 @@ const projects = [
     },
     {
         key: 4,
-        name: 'Sunrise E-commerce',
+        name: 'Tuna HMS',
         description: " Mobile App design for Ecommerce Company which sells wide range of products. I was tasked with designing a interactive mobile app with prototype and interaction animations",
         link: "https://www.behance.net/gallery/156320125/Sunrise-Ecommerce",
-        image: "sunrise.webp",
+        image: "HMS.webp",
         message: "Under Construction"
     },
 ]

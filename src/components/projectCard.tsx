@@ -29,7 +29,7 @@ function ProjectCard({ link, name, description, image, message, index }: project
                         duration: 0.3, type: "spring", stiffness: 260,
                         damping: 40
                     }}
-                    viewport={{ once: true, amount: 0.01 }}  >
+                    viewport={{ once: true, amount: 0.03 }}  >
                     <Link href={link} target='_blank' className=' cursor-pointer ' >
 
 
