@@ -2,6 +2,7 @@ import React from 'react'
 import TestimonialCard from './testimonialCard'
 const testimonialDate = [
     {
+        key: 1,
         name: "Ajay Khatri",
         post: "UI UX Designer | Front End Develper",
         description: "I’ve had the pleasure of working with many professionals in our line of work, but Sudip is someone who I will always remember fondly. Sudip consistently gave 100% of himself to every project we worked on. His work ethic was impeccable, and he was always the first person to offer help and support. His ability to overcome challenges with a smile made him stand out as a cut above the rest!"
@@ -9,6 +10,7 @@ const testimonialDate = [
         image: "ajay.jpg",
     },
     {
+        key: 2,
         name: "Ajay Khatri",
         post: "UI UX Designer | Front End Develper",
         description: "I’ve had the pleasure of working with many professionals in our line of work, but Sudip is someone who I will always remember fondly. Sudip consistently gave 100% of himself to every project we worked on. His work ethic was impeccable, and he was always the first person to offer help and support. His ability to overcome challenges with a smile made him stand out as a cut above the rest!"
@@ -16,6 +18,8 @@ const testimonialDate = [
         image: "ajay.jpg",
     },
     {
+        key: 3,
+
         name: "Ajay Khatri",
         post: "UI UX Designer | Front End Develper",
         description: "I’ve had the pleasure of working with many professionals in our line of work, but Sudip is someone who I will always remember fondly. Sudip consistently gave 100% of himself to every project we worked on. His work ethic was impeccable, and he was always the first person to offer help and support. His ability to overcome challenges with a smile made him stand out as a cut above the rest!"
@@ -36,7 +40,7 @@ function Testimonials() {
                     Recomendation </h2>
             </div>
             <div className="testimonials grid md:grid-cols-3 mt-20   gap-14 md:gap-10">
-                {testimonialDate.map((testimonial) => <TestimonialCard name={testimonial.name} post={testimonial.post} copy={testimonial.description} image={testimonial.image} />)}
+                {testimonialDate.map((testimonial) => <TestimonialCard key={testimonial.key} name={testimonial.name} post={testimonial.post} copy={testimonial.description} image={testimonial.image} />)}
             </div>
         </div>
     )
