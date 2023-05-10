@@ -69,12 +69,30 @@ export default function Home() {
       {/* portfolio section */}
       <div className="work  block relative sm:pb-40  bg-black py-10 sm:pt-24">
         <div className="container">
-          <span className="location tracking-widest ">
+          <motion.span className="location tracking-widest " initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.1,
+              duration: 0.3, type: "spring", stiffness: 260,
+              damping: 40
+            }} viewport={{ once: true, amount: 0.01 }}>
             PORTFOLIO
-          </span>
-          <h2 className=' text-2xl  mt-1  max-w-[500px] '>
-            Projects</h2>
-          <p className='max-w-xl leading-normal mt-4'>My passion lies in crafting immersive experiences that seamlessly blend form and function. From intuitive interfaces to visually stunning designs, I strive to create solutions that not only captivate, but also serve a purpose. </p>
+          </motion.span>
+          <motion.h2 initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.2,
+              duration: 0.3, type: "spring", stiffness: 260,
+              damping: 40
+            }} viewport={{ once: true, amount: 0.01 }} className=' text-2xl  mt-1  max-w-[500px] '>
+            Projects</motion.h2>
+          <motion.p initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.3,
+              duration: 0.3, type: "spring", stiffness: 260,
+              damping: 40
+            }} viewport={{ once: true, amount: 0.01 }} className='max-w-xl leading-normal mt-2'>My passion lies in crafting immersive experiences that seamlessly blend form and function. From intuitive interfaces to visually stunning designs, I strive to create solutions that not only captivate, but also serve a purpose. </motion.p>
 
           <div className='my-20 xl:mb-60'>
             <ProjectCollections />
@@ -90,24 +108,54 @@ export default function Home() {
         <div className="container grid gap-y-11  -order-1 xl:grid-cols-2 items-center ">
           <div className="text">
             <div className="flex gap-1  flex-col ">
-              <span className="location tracking-widest ">
+              <motion.span className="location tracking-widest " initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: 0.1,
+                  duration: 0.3, type: "spring", stiffness: 260,
+                  damping: 40
+                }} viewport={{ once: true, amount: 0.01 }}>
                 ABOUT ME
-              </span>
-              <h2 className=' text-2xl   max-w-[500px] '>
-                Designer with Insatiable hunger for Improvement              </h2>
+              </motion.span>
+              <motion.h2 className=' text-2xl   max-w-[500px] ' initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: 0.2,
+                  duration: 0.3, type: "spring", stiffness: 260,
+                  damping: 40
+                }} viewport={{ once: true, amount: 0.01 }}>
+                Designer with Insatiable hunger for Improvement              </motion.h2>
             </div>
-            <p className="mt-4">
+            <motion.p className="mt-4" initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: 0.3,
+                duration: 0.3, type: "spring", stiffness: 260,
+                damping: 40
+              }} viewport={{ once: true, amount: 0.01 }}>
               Hello, I'm Sudip, but you can call me Pidus. I'm a creative professional with a passion for designing user-centered digital experiences. I am a life long learner who ‘ve been doing design work for many years now and have learned a lot along the way. I'm always striving to improve myself and learn new skills.
 
               With my background in graphic design, I bring a unique perspective to branding and marketing that allows me to create cohesive and effective designs. I also have experience in templating and front-end development, giving me a solid understanding of the technical side of design.Over the years, I've helped businesses develop their brand identity and solve their design challenges through strategic and innovative design solutions. My goal is always to create interactive experiences that are beautiful, intuitive, and meaningful. I believe that good design is not just about making things look pretty, but about making them work better for the user.So, if you're looking for a designer who can bring your ideas to life and elevate your digital presence, let's connect and see how we can work together.
-            </p>
-            <button className=" p-2  mt-6 border-b-2">Download Resume</button>
+            </motion.p>
+            <motion.button initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: 0.4,
+                duration: 0.3, type: "spring", stiffness: 260,
+                damping: 40
+              }} viewport={{ once: true, amount: 0.01 }} className=" p-2  mt-6 border-b-2">Download Resume</motion.button>
           </div>
-          <div className="w-72  m-auto  overflow-hidden relative">
+          <motion.div className="w-72  m-auto rounded overflow-hidden relative" initial={{ opacity: 0, scale: 1.1 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              delay: 0.1,
+              duration: 0.3, type: "spring", stiffness: 260,
+              damping: 40
+            }} viewport={{ once: true, amount: 0.01 }}>
             <Image className="relative" src={"/Pidus.jpg"} width={500} height={600} layout="responsive">
 
             </Image>
-          </div>
+          </motion.div>
 
         </div>
 
@@ -119,9 +167,14 @@ export default function Home() {
       <Marquee
         autoFill={true}
         className="">
-        <div className="overflow-hidden   flex w-full justify-between ">
+        <motion.div className="overflow-hidden   flex w-full justify-between " initial={{ opacity: 0, scaleX: 1.2 }} whileInView={{ opacity: 1, scaleX: 1 }}
+          transition={{
+            delay: 0.1,
+            duration: 0.3, type: "spring", stiffness: 260,
+            damping: 40
+          }} viewport={{ once: true, amount: 0.01 }}>
           {skills.map((skill) => <span className="whitespace-nowrap px-10">#{skill}</span>)}
-        </div>
+        </motion.div>
 
 
       </Marquee>

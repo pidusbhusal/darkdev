@@ -1,17 +1,24 @@
 import React from 'react'
 import Image from 'next/legacy/image'
+import { motion } from 'framer-motion'
 
 interface testimonialProps {
     copy: string,
     image: string,
     name: string,
-    post: string
+    post: string,
+    index: number,
 }
 
 
-function TestimonialCard({ copy, image, name, post }: testimonialProps) {
+function TestimonialCard({ copy, image, name, post, index }: testimonialProps) {
     return (
-        <div className='grid  gap-0 items-start justify-start -z-20'>
+        <motion.div className='grid  gap-0 items-start justify-start -z-20' initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+                delay: 0.1 * index,
+                duration: 0.3, type: "spring", stiffness: 260,
+                damping: 40
+            }} viewport={{ once: true, amount: 0.03 }}>
 
 
             <div className='flex gap-3'>
@@ -22,7 +29,7 @@ function TestimonialCard({ copy, image, name, post }: testimonialProps) {
                     <h3 className=''>{name}</h3>
                     <p>{post}</p>
                 </div>
-                
+
 
 
 
@@ -34,7 +41,7 @@ function TestimonialCard({ copy, image, name, post }: testimonialProps) {
 
 
 
-        </div>
+        </motion.div>
     )
 }
 
