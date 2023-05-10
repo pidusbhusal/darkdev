@@ -22,14 +22,15 @@ export default function App({ Component, pageProps, router }: AppProps) {
     <motion.div key={router.route} initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{
-        duration: 0.5, type: "spring", stiffness: 300,
+        duration: 0.5, type: "spring", stiffness: 2300,
         damping: 70
       }} >
       <Component {...pageProps} />
+      <Footer />
     </motion.div>
 
     <div>
-      <Footer />
+    
     </div>
   </div >)
 

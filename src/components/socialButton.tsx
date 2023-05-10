@@ -16,7 +16,7 @@ export default function Social_button({ icon, name, link, alt, index }: socialbu
         alt === "mail icon" ? (
             <div>
                 <motion.a href={`mailto:${link}`} initial={{ opacity: 0, scale: 1.1 }}
-                    animate={{ opacity: 1, scale: 1 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
                     transition={{
                         delay: 0.1 * index,
                         duration: 0.3, type: "spring", stiffness: 260,
@@ -39,7 +39,7 @@ export default function Social_button({ icon, name, link, alt, index }: socialbu
 
         ) : (<div>
             <motion.a initial={{ opacity: 0, scale: 1.1, }}
-                animate={{ opacity: 1, scale: 1, }}
+                whileInView={{ opacity: 1, scale: 1, }}
                 transition={{
                     delay: 0.1 * index,
                     duration: 0.3, type: "spring", stiffness: 260,
