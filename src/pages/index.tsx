@@ -23,7 +23,7 @@ export default function Home() {
           <div className="containt lg:col-span-3 col-span-4 flex flex-col gap-12">
             <div className='flex flex-col gap-4'>
               <h1 className='text-3xl sm:text-4xl lg:text-7xl lg:leading-tight  '>
-                Designing delightful solutions.
+                Designing delightful solutions 🗝️.
               </h1>
               <p className='max-w-3xl leading-normal'> Hi, I'm Sudip, a UI/UX Designer with a strong background in Graphic Designing and some experience in Front-end development. I specialize in creating visually appealing and user-friendly digital products  that delight not only you but also your customers .  Let's collaborate to bring your ideas to life!</p>
 
