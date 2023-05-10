@@ -3,14 +3,14 @@ import type { AppProps } from 'next/app'
 import Navbar from './navbar'
 import Footer from './footer';
 import { motion } from "framer-motion";
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps, router }: AppProps) {
 
 
 
 
   return (<div>
-    <motion.div initial={{ opacity: 0}}
-      animate={{ opacity: 1}}
+    <motion.div initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{
         duration: 0.3, type: "spring", stiffness: 260,
         damping: 40
@@ -18,10 +18,19 @@ export default function App({ Component, pageProps }: AppProps) {
       <Navbar />
     </motion.div>
 
-    <Component {...pageProps} />
+
+    <motion.div key={router.route} initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{
+        duration: 0.5, type: "spring", stiffness: 300,
+        damping: 70
+      }} >
+      <Component {...pageProps} />
+    </motion.div>
+
     <div>
       <Footer />
     </div>
-  </div>)
+  </div >)
 
 }

@@ -27,7 +27,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
-                  delay: 0.3,
+                  delay: 0.1,
                   duration: 0.3, type: "spring", stiffness: 260,
                   damping: 40
                 }}
@@ -38,7 +38,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
-                  delay: 0.3,
+                  delay: 0.2,
                   duration: 0.3, type: "spring", stiffness: 260,
                   damping: 40
                 }} className='max-w-3xl leading-normal'> Hi, I'm Sudip, a UI/UX Designer with a strong background in Graphic Designing and some experience in Front-end development. I specialize in creating visually appealing and user-friendly digital products  that delight not only you but also your customers .  Let's collaborate to bring your ideas to life!</motion.p>

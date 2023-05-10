@@ -1,5 +1,6 @@
 import React from 'react'
 import Social_button from './socialButton'
+import { motion } from 'framer-motion'
 
 
 
@@ -51,7 +52,9 @@ function SocialLinks() {
         <div>
 
             <div className="grid gap-5 w-full">
-                {items.map((item) => <Social_button key={item.key} alt={item.alt} icon={item.icon} link={item.link} name={item.name} />)}
+                {items.map((item) =>
+                    <Social_button key={item.key} alt={item.alt} icon={item.icon} link={item.link} name={item.name} index={item.key} />
+                )}
             </div>
         </div>
     )
