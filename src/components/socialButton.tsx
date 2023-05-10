@@ -1,4 +1,5 @@
 import React from 'react'
+import motion from 'framer-motion'
 
 interface socialbuttonprops {
     icon: JSX.Element;
@@ -7,10 +8,12 @@ interface socialbuttonprops {
     alt: string;
 }
 
+// mailto:${ link }
+
 export default function Social_button({ icon, name, link, alt }: socialbuttonprops) {
     return (
-        name === "Mail" ? (
-            <a href={`mailto:${link}to=${link}`} target='_blank' className='flex justify-between  w-full  sm:max-w-[19rem]  px-6 py-4 hover:scale-105 transition ease-in-out  border-[1px] rounded border-slate-700 shadow-gray-800 bg-[#181A1E]  '>
+        alt === "mail icon" ? (
+            <a href={`mailto:${link}`} target='_top' className='flex justify-between  w-full  sm:max-w-[19rem]  px-6 py-4 hover:scale-105 transition ease-in-out  border-[1px] rounded border-slate-700 shadow-gray-800 bg-[#181A1E]  '>
 
                 <div className='flex  gap-3'>
                     {icon}

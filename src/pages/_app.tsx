@@ -9,8 +9,8 @@ export default function App({ Component, pageProps }: AppProps) {
 
 
   return (<div>
-    <motion.div initial={{ opacity: 0, y: -100 }}
-      animate={{ opacity: 1, y: 0 }}
+    <motion.div initial={{ opacity: 0}}
+      animate={{ opacity: 1}}
       transition={{
         duration: 0.3, type: "spring", stiffness: 260,
         damping: 40
