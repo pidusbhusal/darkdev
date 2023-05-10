@@ -13,7 +13,7 @@ interface testimonialProps {
 
 function TestimonialCard({ copy, image, name, post, index }: testimonialProps) {
     return (
-        <motion.div className='grid  gap-0 items-start justify-start -z-20' initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }}
+        <motion.div className='grid  gap-0 items-start justify-start -z-20' initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
             transition={{
                 delay: 0.1 * index,
                 duration: 0.3, type: "spring", stiffness: 260,
