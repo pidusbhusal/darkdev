@@ -38,7 +38,7 @@ const projects = [
 function ProjectCollections() {
 
     return (
-        <div className='flex flex-wrap gap-y-20 justify-between '>{projects.map((project) => <ProjectCard message={project.message} key={project.key} name={project.name} description={project.description} link={project.link} image={project.image} />)}</div>
+        <div className='flex flex-wrap gap-y-20 justify-between '>{projects.map((project) => <ProjectCard message={project.message} key={project.key} name={project.name} description={project.description} link={project.link} image={project.image} index={project.key} />)}</div>
     )
 }
 
