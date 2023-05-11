@@ -15,13 +15,13 @@ export default function Social_button({ icon, name, link, alt, index }: socialbu
     return (
         alt === "mail icon" ? (
             <div>
-                <motion.a href={`mailto:${link}`} initial={{ opacity: 0, scale: 1.1 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
+                <motion.a href={`mailto:${link}`} initial={{ opacity: 0, }}
+                    whileInView={{ opacity: 1, }}
                     transition={{
                         delay: 0.1 * index,
                         duration: 0.3, type: "spring", stiffness: 260,
                         damping: 40
-                    }} viewport={{ once: true, amount: 0.03 }} target='_top' className='flex justify-between  w-full  sm:max-w-[19rem]  px-6 py-4 hover:scale-105 transition ease-in-out  border-[1px] rounded border-slate-700 shadow-gray-800 bg-[#181A1E]  '>
+                    }} viewport={{ once: true, amount: 0.03 }} target='_top' className='flex justify-between group w-full  sm:max-w-[19rem]  px-6 py-4 hover:scale-105 transition ease-in-out  border-[1px] rounded border-slate-700 shadow-gray-800 bg-[#181A1E]  '>
 
                     <div className='flex  gap-3'>
                         {icon}
@@ -38,8 +38,8 @@ export default function Social_button({ icon, name, link, alt, index }: socialbu
             </div>
 
         ) : (<div>
-            <motion.a initial={{ opacity: 0, scale: 1.1, }}
-                whileInView={{ opacity: 1, scale: 1, }}
+            <motion.a initial={{ opacity: 0, }}
+                whileInView={{ opacity: 1, }}
                 transition={{
                     delay: 0.1 * index,
                     duration: 0.3, type: "spring", stiffness: 260,
