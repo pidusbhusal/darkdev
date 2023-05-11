@@ -51,7 +51,6 @@ function ProjectCollections() {
 
     useEffect(() => {
         const mouseMove = (e: { clientX: any; clientY: any; }) => {
-            console.log(e.clientX, e.clientY)
             setMousePosition({
                 x: e.clientX,
                 y: e.clientY

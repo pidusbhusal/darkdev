@@ -29,12 +29,16 @@ function Footer() {
                 <div className='relative  flex flex-grow'>
                     <ContactForm />
                 </div>
-                <div>
+                <div className=' sm:w-fit w-full'>
                     <p className='text-white pb-4'>Socials</p>
                     <SocialLinks />
                 </div>
-
+                <p className='pt-20 container'>Design and Developed by Pidus</p>
             </div>
+
+
+
+
         </motion.div>
     )
 }

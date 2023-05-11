@@ -80,10 +80,10 @@ function Profile() {
 
                 </div>
             </div>
-            <div className="work  block relative sm:pb-40  bg-black py-10 sm:pt-24">
+            <div className="work  block relative sm:pb-40  bg-black pb-16 sm:pt-24">
                 <div className="container">
                     <div className='flex w-full justify-between flex-wrap'>
-                        <div className='sticky top-[300px]  right-0 h-[100px]    '>
+                        <div className='md:sticky top-[300px] pb-16 right-0 h-fit    '>
                             <motion.span initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{
@@ -102,7 +102,7 @@ function Profile() {
                                 }} viewport={{ once: true, amount: 0.01 }} className='max-w-sm leading-normal mt-4'>I take pleasure in devising practical solutions for distinct challenges, and these are abilities that I have acquired throughout my professional journey. </motion.p>
 
                         </div>
-                        <div className='float'>
+                        <div className='md:float'>
                             {Domains.map(domain => <Skillcard name={domain.name} key={domain.key} description={domain.description} subskills={domain.subskills} />)}
                         </div>
                     </div>
