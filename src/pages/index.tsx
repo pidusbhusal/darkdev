@@ -1,4 +1,4 @@
-
+import { useEffect, useState } from 'react';
 import Image from "next/legacy/image"
 import Link from "next/link"
 import SocialLinks from '@/components/socialslink'
@@ -17,6 +17,7 @@ const skills = ["Front-end", "Ui Design", "Ux Design", "Interaction Design", "Lo
 
 
 export default function Home() {
+  
   return (
     <>
 

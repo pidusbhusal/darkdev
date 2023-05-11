@@ -1,5 +1,9 @@
 import React from 'react'
+import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion'
+
 import ProjectCard from './projectCard'
+import { type } from 'os';
 const projects = [
     {
         key: 1,
@@ -29,7 +33,7 @@ const projects = [
         key: 4,
         name: 'Tuna HMS',
         description: " Mobile App design for Ecommerce Company which sells wide range of products. I was tasked with designing a interactive mobile app with prototype and interaction animations",
-        link: "https://www.behance.net/gallery/156320125/Sunrise-Ecommerce",
+        link: " ",
         image: "HMS.webp",
         message: "Under Construction"
     },
@@ -37,8 +41,65 @@ const projects = [
 
 function ProjectCollections() {
 
+    const [mousePosition, setMousePosition] = useState({
+        x: 0,
+        y: 0
+    });
+    const [cursorVariant, setCursorVariant] = useState("default");
+    const [message, setMessage] = useState('')
+
+
+    useEffect(() => {
+        const mouseMove = (e: { clientX: any; clientY: any; }) => {
+            console.log(e.clientX, e.clientY)
+            setMousePosition({
+                x: e.clientX,
+                y: e.clientY
+            })
+        }
+
+        window.addEventListener("mousemove", mouseMove);
+
+        return () => {
+            window.removeEventListener("mousemove", mouseMove);
+        }
+    }, []);
+
+    const variants = {
+        default: {
+            x: mousePosition.x - 16,
+            y: mousePosition.y - 16,
+            height: 0,
+            width: 0,
+            opacity: 0,
+        },
+        text: {
+            opacity: 1,
+            height: 150,
+            width: 150,
+            x: mousePosition.x - 70,
+            y: mousePosition.y - 70,
+            backgroundColor: "white",
+
+        }
+    }
+
+
     return (
-        <div className='flex flex-wrap gap-y-20 justify-between '>{projects.map((project) => <ProjectCard message={project.message} key={project.key} name={project.name} description={project.description} link={project.link} image={project.image} index={project.key} />)}</div>
+        <div className='flex flex-wrap gap-y-20 justify-between '>{projects.map((project) => <ProjectCard setMessage={setMessage} setCursorVariant={setCursorVariant} message={project.message} key={project.key} name={project.name} description={project.description} link={project.link} image={project.image} index={project.key} />)}
+            <motion.div
+                className='cursor z-20  overflow-hidden  '
+                variants={variants}
+                animate={cursorVariant}
+                transition={{type:"spring" , mass:0.01}}
+
+            >
+                <div className='w-28 text-mid text-black text-center '>
+                    {message}
+                </div>
+
+            </motion.div></div>
+
     )
 }
 
