@@ -10,20 +10,26 @@ const Domains = [
     {
         key: 1,
         name: "Ui Ux design",
-        description: "With my extensive expertise in digital development, I am able to establish a strong basis for selecting the right typeface, color scheme, and imagery that ensures the brand and its presence is perceived consistently by consumers.",
+        description: "I'm a UI/UX designer with a knack for creating user interfaces that are both aesthetically pleasing and easy to use.Whether it's inspiring landing/marketing websites, convincing e-commerce sites, or apps that are beneficial to users, I strive to create designs that are both user-friendly and visually stunning. ",
         subskills: ["Interaction Design", "Wireframe", "Website & Landing Page", "Product Design"]
     },
     {
         key: 2,
-        name: "Ui Ux design",
-        description: "With my extensive expertise in digital development, I am able to establish a strong basis for selecting the right typeface, color scheme, and imagery that ensures the brand and its presence is perceived consistently by consumers.",
-        subskills: ["Interaction Design", "Wireframe", "Website & Landing Page", "Product Design"]
+        name: "Branding",
+        description: "I create and develop brand identities for businesses of all sizes. I work with clients to understand their target audience, their values, and their goals, and then I use that information to create a brand that is both visually appealing and strategically sound.",
+        subskills: ["Logo Design", "Brand Identity", "Branding Strategy", "Branding Guidelines"]
     },
     {
         key: 3,
-        name: "Ui Ux design",
-        description: "With my extensive expertise in digital development, I am able to establish a strong basis for selecting the right typeface, color scheme, and imagery that ensures the brand and its presence is perceived consistently by consumers.",
-        subskills: ["Interaction Design", "Wireframe", "Website & Landing Page", "Product Design"]
+        name: "Front End Development",
+        description: "I started doing front-end development to improve my designs and fulfill their intended purpose. Along the way, I learned a lot of skills and how front-end development works. ",
+        subskills: ["HTML", "CSS", "JavaScript", "React", "NextJS", "FramerJS", "Tailwind"]
+    },
+    {
+        key: 4,
+        name: "Graphic Designing",
+        description: "I create visual content for a variety of purposes, including print, web, and marketing. I create designs that are both informative and engaging.",
+        subskills: ["Social Media Graphics", "Banner", "Hotel Menu", "Print Design", "Marketing Banner"]
     },
 ]
 
@@ -80,7 +86,7 @@ function Profile() {
 
                 </div>
             </div>
-            <div className="work  block relative sm:pb-40  bg-black pb-16 sm:pt-24">
+            <div className="work  block relative sm:pb-24  bg-black pb-16 sm:pt-24">
                 <div className="container">
                     <div className='flex w-full justify-between flex-wrap'>
                         <div className='md:sticky top-[300px] pb-16 right-0 h-fit    '>

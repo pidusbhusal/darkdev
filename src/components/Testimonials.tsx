@@ -1,4 +1,5 @@
 import React from 'react'
+import { useEffect, useState } from 'react'
 import TestimonialCard from './testimonialCard'
 import { motion } from 'framer-motion'
 const testimonialDate = [
@@ -31,6 +32,20 @@ const testimonialDate = [
 
 
 function Testimonials() {
+    const [testimonials, setTestimonials] = useState(null)
+    useEffect(() => {
+        async function fetchData() {
+            const response = await fetch("http://localhost:1337/api/testimonials");
+            const data = await response.json();
+            setTestimonials(data.data);
+            console.log(data.data);
+        }
+
+        fetchData();
+    }, []);
+
+
+
     return (
         <div className='py-40'>
             <div className="container relative grid justify-center ">
@@ -51,7 +66,7 @@ function Testimonials() {
                     Recomendation </motion.h2>
             </div>
             <div className="testimonials grid md:grid-cols-3 mt-20   gap-14 md:gap-10">
-                {testimonialDate.map((testimonial) => <TestimonialCard key={testimonial.key} index={testimonial.key} name={testimonial.name} post={testimonial.post} copy={testimonial.description} image={testimonial.image} />)}
+                {testimonials && testimonials.map((testimonial: any) => <TestimonialCard key={testimonial.attributes.key} index={testimonial.attributes.key} name={testimonial.attributes.name} post={testimonial.attributes.post} copy={testimonial.attributes.description} image={testimonial.attributes.image} />)}
             </div>
         </div>
     )
