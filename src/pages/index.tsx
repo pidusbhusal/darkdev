@@ -17,7 +17,7 @@ const skills = ["Front-end", "Ui Design", "Ux Design", "Interaction Design", "Lo
 
 
 export default function Home() {
-  
+
   return (
     <>
 
@@ -181,7 +181,7 @@ export default function Home() {
             duration: 0.3, type: "spring", stiffness: 260,
             damping: 40
           }} viewport={{ once: true, amount: 0.01 }}>
-          {skills.map((skill) => <span className="whitespace-nowrap px-10">#{skill}</span>)}
+          {skills.map((skill, index) => <span key={index} className="whitespace-nowrap px-10">#{skill}</span>)}
         </motion.div>
 
 

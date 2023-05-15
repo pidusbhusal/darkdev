@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion'
@@ -40,6 +41,20 @@ const projects = [
 ]
 
 function ProjectCollections() {
+
+    const [products, setProducts] = useState(null);
+
+
+    useEffect(() => {
+        async function fetchData() {
+            const response = await fetch("http://localhost:1337/api/projects?populate=*");
+            const data = await response.json();
+            setProducts(data.data);
+            console.log(data.data);
+        }
+
+        fetchData();
+    }, []);
 
     const [mousePosition, setMousePosition] = useState({
         x: 0,
@@ -85,12 +100,25 @@ function ProjectCollections() {
 
 
     return (
-        <div className='flex flex-wrap gap-y-20 justify-between '>{projects.map((project) => <ProjectCard setMessage={setMessage} setCursorVariant={setCursorVariant} message={project.message} key={project.key} name={project.name} description={project.description} link={project.link} image={project.image} index={project.key} />)}
+        <div className='flex flex-wrap gap-y-20 justify-between '>
+            {products !== null && products?.map((product: any) => (
+                <ProjectCard
+                    setMessage={setMessage}
+                    setCursorVariant={setCursorVariant}
+                    message={product.attributes.message}
+                    key={product.attributes.key}
+                    name={product.attributes.name}
+                    description={product.attributes.description}
+                    link={product.attributes.link}
+                    image={product.attributes.imageurl}
+                    index={product.id} />)
+            )}
+
             <motion.div
                 className='cursor z-20  overflow-hidden  '
                 variants={variants}
                 animate={cursorVariant}
-                transition={{type:"spring" , mass:0.01}}
+                transition={{ type: "spring", mass: 0.01 }}
 
             >
                 <div className='w-28 text-mid text-black text-center '>
@@ -102,4 +130,10 @@ function ProjectCollections() {
     )
 }
 
+
+
+
+
 export default ProjectCollections
+
+

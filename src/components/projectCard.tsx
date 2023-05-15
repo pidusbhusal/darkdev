@@ -9,8 +9,8 @@ interface projectProps {
     link: string,
     name: string,
     description: string,
-    image: string
-    index: number
+    image: string,
+    index: number,
     message: string,
     setCursorVariant: React.Dispatch<React.SetStateAction<string>>,
     setMessage: React.Dispatch<React.SetStateAction<string>>,
@@ -24,7 +24,7 @@ function ProjectCard({ setMessage, setCursorVariant, link, name, description, im
 
     const textEnter = () => {
         setCursorVariant("text");
-        setMessage( message )
+        setMessage(message)
     };
     const textLeave = () => setCursorVariant("default");
 
@@ -45,7 +45,7 @@ function ProjectCard({ setMessage, setCursorVariant, link, name, description, im
 
                         <div className=' flex  overflow-hidden' onMouseEnter={textEnter} onMouseLeave={textLeave}   >
 
-                            <Image src={`/projectimages/${image}`} alt="My image"
+                            <Image src={image} alt="My image"
 
                                 width={500}
                                 height={500}
