@@ -15,6 +15,7 @@ query NewQuery {
       projects {
         description
         link
+        id
         messsage
         image {
           title
@@ -101,7 +102,7 @@ function ProjectCollections() {
                     description={product.projects.description}
                     link={product.projects.link}
                     image={product.projects.image.sourceUrl}
-                    index={product.databaseId} />)
+                    index={product.projects.id} />)
             )}
 
             <motion.div

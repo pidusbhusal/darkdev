@@ -19,6 +19,7 @@ function Testimonials() {
                 testimonials {
                     description
                     post
+                    id
                     image {
                     sourceUrl
                     }
@@ -62,7 +63,7 @@ function Testimonials() {
                     Recomendation </motion.h2>
             </div>
             <div className="testimonials grid md:grid-cols-3 mt-20   gap-14 md:gap-10">
-                {data.testimonials.nodes != null && data.testimonials.nodes.map((testimonial: any) => <TestimonialCard key={testimonial.databaseId} index={testimonial.databaseId} name={testimonial.title} post={testimonial.testimonials.post} copy={testimonial.testimonials.description} image={testimonial.testimonials.image.sourceUrl} />)}
+                {data.testimonials.nodes != null && data.testimonials.nodes.map((testimonial: any) => <TestimonialCard key={testimonial.testimonials.id} index={testimonial.testimonials.id} name={testimonial.title} post={testimonial.testimonials.post} copy={testimonial.testimonials.description} image={testimonial.testimonials.image.sourceUrl} />)}
             </div>
         </div>
     )

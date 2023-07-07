@@ -156,7 +156,7 @@ export default function Home() {
           <motion.div className="w-72  m-auto rounded overflow-hidden relative" initial={{ opacity: 0, scale: 1.1 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{
-              delay: 0.1,
+              delay: 0.0,
               duration: 0.3, type: "spring", stiffness: 260,
               damping: 40
             }} viewport={{ once: true, amount: 0.01 }}>
