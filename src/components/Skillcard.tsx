@@ -31,7 +31,7 @@ function Skillcard({ subskills, name, description }: projectProps) {
                 {name}                </h2>
             <p className='   max-w-[500px]  flex-wrap'> {description}</p>
             <div className='flex flex-wrap gap-3 max-w-[500px] '>
-                {subskills.map(subskill => <p className='text-gray-400 bg-[#24262B] flex w-fit rounded-full px-4 p-1 text-md'>{subskill}</p>)}
+                {subskills.map((subskill: any) => <p className='text-gray-400 bg-[#24262B] flex w-fit rounded-full px-4 p-1 text-md'>{subskill.subSkill}</p>)}
 
             </div>
 

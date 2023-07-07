@@ -160,7 +160,7 @@ export default function Home() {
               duration: 0.3, type: "spring", stiffness: 260,
               damping: 40
             }} viewport={{ once: true, amount: 0.01 }}>
-            <Image className="relative" src={"/Pidus.jpg"} width={500} height={600} layout="responsive">
+            <Image className="relative" src={"https://res.cloudinary.com/dgjcimkmq/image/upload/v1688630888/Pidus_d3exvm_380e67a.webp"} width={500} height={600} layout="responsive">
 
             </Image>
           </motion.div>

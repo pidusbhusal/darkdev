@@ -5,39 +5,45 @@ import Image from 'next/image'
 import Testimonials from '@/components/Testimonials'
 import Skillcard from '@/components/Skillcard'
 import { motion } from 'framer-motion'
+import { gql, useQuery } from "@apollo/client"
 
-const Domains = [
-    {
-        key: 1,
-        name: "Ui Ux design",
-        description: "I'm a UI/UX designer with a knack for creating user interfaces that are both aesthetically pleasing and easy to use.Whether it's inspiring landing/marketing websites, convincing e-commerce sites, or apps that are beneficial to users, I strive to create designs that are both user-friendly and visually stunning. ",
-        subskills: ["Interaction Design", "Wireframe", "Website & Landing Page", "Product Design"]
-    },
-    {
-        key: 2,
-        name: "Branding",
-        description: "I create and develop brand identities for businesses of all sizes. I work with clients to understand their target audience, their values, and their goals, and then I use that information to create a brand that is both visually appealing and strategically sound.",
-        subskills: ["Logo Design", "Brand Identity", "Branding Strategy", "Branding Guidelines"]
-    },
-    {
-        key: 3,
-        name: "Front End Development",
-        description: "I started doing front-end development to improve my designs and fulfill their intended purpose. Along the way, I learned a lot of skills and how front-end development works. ",
-        subskills: ["HTML", "CSS", "JavaScript", "React", "NextJS", "FramerJS", "Tailwind"]
-    },
-    {
-        key: 4,
-        name: "Graphic Designing",
-        description: "I create visual content for a variety of purposes, including print, web, and marketing. I create designs that are both informative and engaging.",
-        subskills: ["Social Media Graphics", "Banner", "Hotel Menu", "Print Design", "Marketing Banner"]
-    },
-]
+
+
+
 
 
 
 
 
 function Profile() {
+
+
+    const GET_ALL_PROJECTS = gql`
+query NewQuery {
+  skills {
+    nodes {
+      title
+      databaseId
+      uiUxDesign {
+        description
+        skillCollection {
+          subSkill
+        }
+      }
+    }
+  }
+}`
+
+
+    const { loading, error, data } = useQuery(GET_ALL_PROJECTS)
+    if (loading) return <p>Loading posts…</p>;
+    if (error) return <p>Error</p>;
+
+    const postsFound = Boolean(data?.skills.nodes.length);
+    if (!postsFound) {
+        return <p>No matching posts found.</p>;
+    }
+
     return (
         <div>
             <div className="container  ">
@@ -49,7 +55,7 @@ function Profile() {
                             duration: 0.3, type: "spring", stiffness: 260,
                             damping: 40
                         }} viewport={{ once: true, amount: 0.01 }}>
-                        <Image alt='me' className="relative" src={"/Aboutme.jpg"} width={500} height={600} layout="responsive">
+                        <Image alt='me' className="relative" src={"https://res.cloudinary.com/dgjcimkmq/image/upload/v1688630897/kytjg8jxi2ivzixjxq9i_39476a5.webp"} width={500} height={600} layout="responsive">
 
                         </Image>
                     </motion.div>
@@ -109,7 +115,7 @@ function Profile() {
 
                         </div>
                         <div className='md:float'>
-                            {Domains.map(domain => <Skillcard name={domain.name} key={domain.key} description={domain.description} subskills={domain.subskills} />)}
+                            {data.skills.nodes != null && data.skills.nodes.map((domain: any) => <Skillcard name={domain.title} key={domain.databaseId} description={domain.uiUxDesign.description} subskills={domain.uiUxDesign.skillCollection} />)}
                         </div>
                     </div>
 

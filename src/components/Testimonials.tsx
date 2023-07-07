@@ -2,47 +2,43 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import TestimonialCard from './testimonialCard'
 import { motion } from 'framer-motion'
-const testimonialDate = [
-    {
-        key: 1,
-        name: "Ajay Khatri",
-        post: "UI UX Designer | Front End Develper",
-        description: "I’ve had the pleasure of working with many professionals in our line of work, but Sudip is someone who I will always remember fondly. Sudip consistently gave 100% of himself to every project we worked on. His work ethic was impeccable, and he was always the first person to offer help and support. His ability to overcome challenges with a smile made him stand out as a cut above the rest!"
-        ,
-        image: "ajay.jpg",
-    },
-    {
-        key: 2,
-        name: "Ajay Khatri",
-        post: "UI UX Designer | Front End Develper",
-        description: "I’ve had the pleasure of working with many professionals in our line of work, but Sudip is someone who I will always remember fondly. Sudip consistently gave 100% of himself to every project we worked on. His work ethic was impeccable, and he was always the first person to offer help and support. His ability to overcome challenges with a smile made him stand out as a cut above the rest!"
-        ,
-        image: "ajay.jpg",
-    },
-    {
-        key: 3,
+import { gql, useQuery } from "@apollo/client"
 
-        name: "Ajay Khatri",
-        post: "UI UX Designer | Front End Develper",
-        description: "I’ve had the pleasure of working with many professionals in our line of work, but Sudip is someone who I will always remember fondly. Sudip consistently gave 100% of himself to every project we worked on. His work ethic was impeccable, and he was always the first person to offer help and support. His ability to overcome challenges with a smile made him stand out as a cut above the rest!"
-        ,
-        image: "ajay.jpg",
-    },
-]
+
 
 
 function Testimonials() {
-    const [testimonials, setTestimonials] = useState(null)
-    useEffect(() => {
-        async function fetchData() {
-            const response = await fetch("http://localhost:1337/api/testimonials");
-            const data = await response.json();
-            setTestimonials(data.data);
-            console.log(data.data);
-        }
+    const [testimonials, setTestimonials] = useState([])
 
-        fetchData();
-    }, []);
+
+    const GET_ALL_PROJECTS = gql`
+        query NewQuery {
+            testimonials {
+                nodes {
+                title
+                testimonials {
+                    description
+                    post
+                    image {
+                    sourceUrl
+                    }
+                }
+                databaseId
+                }
+            }
+            }`
+
+    const { loading, error, data } = useQuery(GET_ALL_PROJECTS)
+    if (loading) return <p>Loading posts…</p>;
+    if (error) return <p>Error</p>;
+
+    const postsFound = Boolean(data?.testimonials.nodes.length);
+    if (!postsFound) {
+        return <p>No matching posts found.</p>;
+    }
+
+
+
 
 
 
@@ -66,7 +62,7 @@ function Testimonials() {
                     Recomendation </motion.h2>
             </div>
             <div className="testimonials grid md:grid-cols-3 mt-20   gap-14 md:gap-10">
-                {testimonials && testimonials.map((testimonial: any) => <TestimonialCard key={testimonial.attributes.key} index={testimonial.attributes.key} name={testimonial.attributes.name} post={testimonial.attributes.post} copy={testimonial.attributes.description} image={testimonial.attributes.image} />)}
+                {data.testimonials.nodes != null && data.testimonials.nodes.map((testimonial: any) => <TestimonialCard key={testimonial.databaseId} index={testimonial.databaseId} name={testimonial.title} post={testimonial.testimonials.post} copy={testimonial.testimonials.description} image={testimonial.testimonials.image.sourceUrl} />)}
             </div>
         </div>
     )

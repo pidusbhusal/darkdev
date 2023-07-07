@@ -2,34 +2,41 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion'
-
 import ProjectCard from './projectCard'
 import { type } from 'os';
+import { gql, useQuery } from "@apollo/client"
+
+const GET_ALL_PROJECTS = gql`
+query NewQuery {
+  projects {
+    nodes {
+      databaseId
+      title
+      projects {
+        description
+        link
+        messsage
+        image {
+          title
+          sourceUrl
+        }
+      }
+    }
+  }
+}`
+
+
 
 
 
 function ProjectCollections() {
-
-    const [products, setProducts] = useState(null);
-
-
-    useEffect(() => {
-        async function fetchData() {
-            const response = await fetch("http://localhost:1337/api/projects?populate=*");
-            const data = await response.json();
-            setProducts(data.data);
-
-        }
-
-        fetchData();
-    }, []);
-
+    const [message, setMessage] = useState('')
+    const [cursorVariant, setCursorVariant] = useState("default");
     const [mousePosition, setMousePosition] = useState({
         x: 0,
         y: 0
     });
-    const [cursorVariant, setCursorVariant] = useState("default");
-    const [message, setMessage] = useState('')
+
 
 
     useEffect(() => {
@@ -66,38 +73,51 @@ function ProjectCollections() {
         }
     }
 
-  
+    const { loading, error, data } = useQuery(GET_ALL_PROJECTS)
+    if (loading) return <p>Loading posts…</p>;
+    if (error) return <p>Error</p>;
+
+    const postsFound = Boolean(data?.projects.nodes.length);
+    if (!postsFound) {
+        return <p>No matching posts found.</p>;
+    }
 
 
-return (
-    <div className='flex flex-wrap gap-y-20 justify-between '>
-        {products !== null && products.map((product: any) => (
-            <ProjectCard
-                setMessage={setMessage}
-                setCursorVariant={setCursorVariant}
-                message={product.attributes.message}
-                key={product.attributes.key}
-                name={product.attributes.name}
-                description={product.attributes.description}
-                link={product.attributes.link}
-                image={product.attributes.imageurl}
-                index={product.id} />)
-        )}
 
-        <motion.div
-            className='cursor z-20  overflow-hidden  '
-            variants={variants}
-            animate={cursorVariant}
-            transition={{ type: "spring", mass: 0.01 }}
 
-        >
-            <div className='w-28 text-mid text-black text-center '>
-                {message}
-            </div>
 
-        </motion.div></div>
 
-)
+
+
+    return (
+        <div className='flex flex-wrap gap-y-20 justify-between '>
+            {data.projects.nodes !== null && data.projects.nodes.map((product: any) => (
+                <ProjectCard
+                    setMessage={setMessage}
+                    setCursorVariant={setCursorVariant}
+                    message={product.projects.messsage}
+                    key={product.databaseId}
+                    name={product.title}
+                    description={product.projects.description}
+                    link={product.projects.link}
+                    image={product.projects.image.sourceUrl}
+                    index={product.databaseId} />)
+            )}
+
+            <motion.div
+                className='cursor z-20  overflow-hidden  '
+                variants={variants}
+                animate={cursorVariant}
+                transition={{ type: "spring", mass: 0.01 }}
+
+            >
+                <div className='w-28 text-mid text-black text-center '>
+                    {message}
+                </div>
+
+            </motion.div></div>
+
+    )
 }
 
 
