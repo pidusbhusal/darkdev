@@ -103,7 +103,7 @@ export default function Home() {
             }} viewport={{ once: true, amount: 0.01 }} className='max-w-xl leading-normal mt-2'>My passion lies in crafting immersive experiences that seamlessly blend form and function. From intuitive interfaces to visually stunning designs, I strive to create solutions that not only captivate, but also serve a purpose. </motion.p>
 
           <div className='my-20 xl:mb-60'>
-            <ProjectCollections />
+            <ProjectCollections nodes={[]} ></ProjectCollections>
           </div>
 
         </div>

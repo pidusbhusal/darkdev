@@ -4,14 +4,17 @@ import Navbar from './navbar'
 import Footer from './footer';
 import { motion } from "framer-motion";
 import { ApolloProvider } from '@apollo/client';
-import Client from "../../lib/apollo"
+import client from "../../lib/apollo"
+
+
+
 export default function App({ Component, pageProps, router }: AppProps) {
 
 
 
 
   return (
-    <ApolloProvider client={Client}>
+    <ApolloProvider client={client}>
 
 
       <motion.div initial={{ opacity: 0 }}

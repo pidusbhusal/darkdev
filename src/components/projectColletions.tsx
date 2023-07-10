@@ -3,34 +3,57 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion'
 import ProjectCard from './projectCard'
+import { GetServerSideProps } from 'next';
 import { type } from 'os';
-import { gql, useQuery } from "@apollo/client"
-
-const GET_ALL_PROJECTS = gql`
-query NewQuery {
-  projects {
-    nodes {
-      databaseId
-      title
-      projects {
-        description
-        link
-        id
-        messsage
-        image {
-          title
-          sourceUrl
-        }
-      }
-    }
-  }
-}`
+import { gql, useQuery, ApolloProvider } from "@apollo/client"
+import client from '../../lib/apollo';
 
 
 
 
 
-function ProjectCollections() {
+
+// const GET_ALL_PROJECTS = gql`
+// query NewQuery {
+//   projects {
+//     nodes {
+//       databaseId
+//       title
+//       projects {
+//         description
+//         link
+//         id
+//         messsage
+//         image {
+//           title
+//           sourceUrl
+//         }
+//       }
+//     }
+//   }
+// }`
+
+interface ProjectNode {
+    databaseId: number;
+    title: string;
+    projects: {
+        description: string;
+        link: string;
+        id: string;
+        messsage: string;
+        image: {
+            title: string;
+            sourceUrl: string;
+        };
+    }[];
+}
+
+
+
+
+function ProjectCollections({ projects }: { projects: ProjectNode[] }) {
+
+
     const [message, setMessage] = useState('')
     const [cursorVariant, setCursorVariant] = useState("default");
     const [mousePosition, setMousePosition] = useState({
@@ -74,15 +97,6 @@ function ProjectCollections() {
         }
     }
 
-    const { loading, error, data } = useQuery(GET_ALL_PROJECTS)
-    if (loading) return <p>Loading posts…</p>;
-    if (error) return <p>Error</p>;
-
-    const postsFound = Boolean(data?.projects.nodes.length);
-    if (!postsFound) {
-        return <p>No matching posts found.</p>;
-    }
-
 
 
 
@@ -91,8 +105,10 @@ function ProjectCollections() {
 
 
     return (
+
         <div className='flex flex-wrap gap-y-20 justify-between '>
-            {data.projects.nodes !== null && data.projects.nodes.map((product: any) => (
+
+            {projects !== null && projects?.map((product: any) => (
                 <ProjectCard
                     setMessage={setMessage}
                     setCursorVariant={setCursorVariant}
@@ -102,8 +118,15 @@ function ProjectCollections() {
                     description={product.projects.description}
                     link={product.projects.link}
                     image={product.projects.image.sourceUrl}
-                    index={product.projects.id} />)
+                    index={product.projects.id} />
+            )
             )}
+
+            Here lie the jason
+            {JSON.stringify(projects)}
+
+
+
 
             <motion.div
                 className='cursor z-20  overflow-hidden  '
@@ -123,8 +146,57 @@ function ProjectCollections() {
 
 
 
-
-
+const MY_QUERY = gql`
+  query NewQuery {
+    projects {
+      nodes {
+        databaseId
+        title
+        projects {
+          description
+          link
+          id
+          messsage
+          image {
+            title
+            sourceUrl
+          }
+        }
+      }
+    }
+  }
+`;
 export default ProjectCollections
 
+
+export async function getStaticProps() {
+
+
+    const GET_PROJECTS = gql`
+        query getAllProjects {
+        projects {
+            nodes {
+            
+            title
+            projects {
+                description
+                link
+                id
+                messsage
+                image {
+                title
+                sourceUrl
+                }
+            }
+            }
+        }
+        }
+
+`
+    const reponse = await client.query({ query: GET_PROJECTS })
+    const projects = reponse?.data?.projects?.nodes
+    return {
+        props: { projects }
+    }
+}
 
