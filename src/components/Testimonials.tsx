@@ -38,7 +38,7 @@ function Testimonials({ data }: { data: TestimonialProps[] }) {
           Recomendation
         </motion.h2>
       </div>
-      <div className="testimonials grid md:grid-cols-3 mt-20   gap-14 md:gap-10">
+      <div className="testimonials grid md:grid-cols-3 mt-20  items-start gap-14 md:gap-10">
         {data != null &&
           data.map((entry: any) => (
             <TestimonialCard
