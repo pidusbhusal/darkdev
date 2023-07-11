@@ -23,9 +23,12 @@ const navbarVariants = {
 };
 const bgVariants = {
   open: {
+    x: "0%",
     opacity: 100,
   },
   closed: {
+    x: "100%",
+
     opacity: 0,
   },
 };
@@ -77,7 +80,7 @@ function Navbar() {
         }}
         className=" sticky top-0 py-6 w-full   hidden md:block"
       >
-        <nav className=" flex container justify-between ">
+        <nav className={`flex container  justify-between `}>
           <div className="w-16">
             <Link href={"/"}>
               <Logo />
@@ -87,29 +90,26 @@ function Navbar() {
           <div className="flex  items-center ">
             <Link
               href="/"
-              className={`${
-                router.pathname === "/" ? "border-b-2" : "border-b-transparent"
-              } mr-8 `}
+              className={`${router.pathname === "/" ? "border-b-2" : "border-b-transparent"
+                } mr-8 `}
             >
               <button className="navbtn">Home</button>
             </Link>
             <Link
               href="/work"
-              className={`${
-                router.pathname === "/work"
-                  ? "border-b-2"
-                  : "border-b-transparent"
-              } mx-8`}
+              className={`${router.pathname === "/work"
+                ? "border-b-2"
+                : "border-b-transparent"
+                } mx-8`}
             >
               <button className="navbtn">Work</button>
             </Link>
             <Link
               href="/profile"
-              className={`${
-                router.pathname === "/profile"
-                  ? "border-b-2"
-                  : "border-b-transparent"
-              } mx-8`}
+              className={`${router.pathname === "/profile"
+                ? "border-b-2"
+                : "border-b-transparent"
+                } mx-8`}
             >
               <button className="navbtn">Profile</button>
             </Link>
@@ -123,7 +123,7 @@ function Navbar() {
       {/* mobile version */}
       <div className="md:hidden  z-50  py-14">
         <div className="flex justify-between">
-          <nav className="fixed inset-0 z-50">
+          <nav className={`${isActive ? "" : "h-fit"} fixed inset-0 z-50`}>
             <div className="flex w-full justify-between px-4 py-6 absolute">
               <div className="w-16 z-100 ">
                 <Link href={"/"}>
@@ -199,36 +199,32 @@ function Navbar() {
                   <Link
                     href="/"
                     onClick={handleClick}
-                    className={`${
-                      router.pathname === "/" ? "bg-gray-900 " : ""
-                    } reponsiveNavBtn`}
+                    className={`${router.pathname === "/" ? "bg-gray-900 " : ""
+                      } reponsiveNavBtn`}
                   >
                     Home
                   </Link>
                   <Link
                     href="/work"
                     onClick={handleClick}
-                    className={`${
-                      router.pathname === "/work" ? "bg-gray-900" : ""
-                    } reponsiveNavBtn`}
+                    className={`${router.pathname === "/work" ? "bg-gray-900" : ""
+                      } reponsiveNavBtn`}
                   >
                     Work
                   </Link>
                   <Link
                     href="/profile"
                     onClick={handleClick}
-                    className={`${
-                      router.pathname === "/profile" ? "bg-gray-900" : ""
-                    } reponsiveNavBtn`}
+                    className={`${router.pathname === "/profile" ? "bg-gray-900" : ""
+                      } reponsiveNavBtn`}
                   >
                     Profile
                   </Link>
                   <Link
                     href="/contact"
                     onClick={handleClick}
-                    className={`${
-                      router.pathname === "/contact" ? "bg-gray-900" : ""
-                    } reponsiveNavBtn`}
+                    className={`${router.pathname === "/contact" ? "bg-gray-900" : ""
+                      } reponsiveNavBtn`}
                   >
                     <button className="pbtn">Let's work together</button>
                   </Link>
@@ -238,7 +234,7 @@ function Navbar() {
           </nav>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
 
