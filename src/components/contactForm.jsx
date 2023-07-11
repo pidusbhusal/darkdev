@@ -77,7 +77,7 @@ function ContactForm() {
 
   return (
     <div className="flex-grow relative ">
-      <form  netlify-honeypot="bot-field"  name="contact"  method="POST" data-netlify="true"  action="" className="flex flex-grow flex-col -z-10" ref={form} onSubmit={sendEmail}>
+      <form  netlify-honeypot="bot-field"   data-netlify-recaptcha="true"  name="contact"  method="POST" data-netlify="true"  action="" className="flex flex-grow flex-col -z-10" ref={form} onSubmit={sendEmail}>
         <motion.div className="flex flex-col gap-y-1 flex-grow">
           <label htmlFor="name">Name *</label>
           <input
@@ -136,6 +136,9 @@ function ContactForm() {
       Don’t fill this out if you’re human: <input name="bot-field" />
     </label>
   </p>
+
+    <div data-netlify-recaptcha="true"></div>
+
         <motion.div className="grid w-full place-items-end flex-grow">
           <button className="pbtn w-fit mt-8" type="submit" value="Send" onClick={handleButton} disabled={isButtonDisabled}>{isButtonDisabled ? 'Submitting...' : 'Submit '}</button>
         </motion.div>
