@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import React, { useState, ChangeEvent, FormEvent, useRef } from 'react';
 import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from "@emailjs/browser";
+import toast, { Toaster } from 'react-hot-toast';
+
 
 
 // interface FormData {
@@ -26,9 +28,12 @@ function ContactForm() {
 
   const handleChange = (e) => {
     setFromData({ ...formData, [e.target.name]: e.target.value });
-    (formData.user_name == "" || formData.user_link =="" || formData.user_message == "")? setSubmitReady(false) : setSubmitReady(true)
+    (formData.user_name == "" || formData.user_link =="" || formData.user_message == "" )? setSubmitReady(false) : setSubmitReady(true)
   };
-
+function onChange(value) {
+  console.log("Captcha value:", value);
+  setVerfied(true)
+}
 
 
  
@@ -47,6 +52,7 @@ function ContactForm() {
   const sendEmail = (e) => {
     e.preventDefault();
     setSubmitStatus("loading");
+    setSubmitReady(false)
 
     emailjs.sendForm(
       "service_8vwl9zk",
@@ -64,7 +70,8 @@ function ContactForm() {
                   user_subject: "",
                   user_message: ""
                 })
-            }, 3000);
+            }, 1000);
+            toast('Message Submitted Sucessfully')
           
           
         },
@@ -138,7 +145,14 @@ function ContactForm() {
             className="bg-gray-900 py-4 mt-2  px-4 border border-gray-600 rounded-md w-full h-[120px]  "
           />
         </motion.div>
-        <p class="hidden">
+        <motion.div className="grid items-stretch gap-y-1 flex-grow  mt-6">
+          <ReCAPTCHA
+    sitekey="6LdC9xMnAAAAAPNl5Io5ZXiFI-1MJJxe7r1_g-Wk"
+     onChange={onCaptchaChange}
+          ref={captchaRef}
+  />
+        </motion.div>
+        <p className="hidden">
     <label>
       Don’t fill this out if you’re human: <input name="bot-field" />
     </label>
@@ -147,14 +161,19 @@ function ContactForm() {
  
 
         <motion.div className="grid w-full place-items-end flex-grow">
-          <button className={(submitStatus=="loading" || !submitReady)?`desbtn w-fit mt-8` : `pbtn w-fit mt-8`} type="submit" value="Send"  disabled={submitStatus === "loading"}> {submitStatus === "loading"
+          <button className={(submitStatus === "loading" || !captcha || !submitReady)?`desbtn w-fit mt-8` : `pbtn w-fit mt-8`} type="submit" value="Send"  disabled={!captcha || submitStatus === "loading"}> {submitStatus === "loading"
             ? "Sending..."
             : submitStatus === "success"
             ? "Thankyou"
             : "Submit"}</button>
         </motion.div>
+        <Toaster  position="bottom-center"/>
       </form>
+     
+            
+
     </div>
+    
   );
 }
 
