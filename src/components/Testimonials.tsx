@@ -27,13 +27,7 @@ function Testimonials() {
                 databaseId
                 }
             }
-            }`
-
-    const { loading, error, data } = useQuery(GET_ALL_PROJECTS)
-    if (loading) return <p>Loading posts…</p>;
-    if (error) return <p>Error</p>;
-
-    const postsFound = Boolean(data?.testimonials.nodes.length);
+ ials.nodes.length);
     if (!postsFound) {
         return <p>No matching posts found.</p>;
     }
