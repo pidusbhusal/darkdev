@@ -26,6 +26,7 @@ function ContactForm() {
 
   const handleChange = (e) => {
     setFromData({ ...formData, [e.target.name]: e.target.value });
+    (formData.user_name == "" || formData.user_link =="" || formData.user_message == "")? setSubmitReady(false) : setSubmitReady(true)
   };
 
 
@@ -146,7 +147,7 @@ function ContactForm() {
  
 
         <motion.div className="grid w-full place-items-end flex-grow">
-          <button className={(submitStatus=="loading")?`pbtn w-fit mt-8` : `desbtn w-fit mt-8`} type="submit" value="Send"  disabled={submitStatus === "loading"}> {submitStatus === "loading"
+          <button className={(submitStatus=="loading" || !submitReady)?`desbtn w-fit mt-8` : `pbtn w-fit mt-8`} type="submit" value="Send"  disabled={submitStatus === "loading"}> {submitStatus === "loading"
             ? "Sending..."
             : submitStatus === "success"
             ? "Thankyou"
