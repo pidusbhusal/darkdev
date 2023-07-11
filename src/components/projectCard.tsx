@@ -56,7 +56,7 @@ function ProjectCard({
                 alt="My image"
                 width={500}
                 height={500}
-                className="rounded-md relative max-w-[500px] max-h-[500px] "
+                className="rounded-md bg-cover overflow-hidden relative max-w-[500px] max-h-[500px] "
               />
             </div>
 
