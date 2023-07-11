@@ -94,6 +94,7 @@ export default function Profile({
                 stiffness: 260,
                 damping: 40,
               }}
+              className="sm:w-52"
               viewport={{ once: true, amount: 0.01 }}
             >
               <Link href="/contact">
@@ -103,10 +104,10 @@ export default function Profile({
           </div>
         </div>
       </div>
-      <div className="work  block relative sm:pb-24  bg-black pb-16 sm:pt-24">
+      <div className="work  block relative sm:pb-24  bg-black pb-16 pt-24">
         <div className="container">
           <div className="flex w-full justify-between flex-wrap">
-            <div className="md:sticky top-[300px] pb-16 right-0 h-fit    ">
+            <div className="lg:sticky lg:top-[300px] pb-16 right-0 h-fit    ">
               <motion.span
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import React, { useState, ChangeEvent, FormEvent, useRef } from 'react';
-
+import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from "@emailjs/browser";
 
 
@@ -12,9 +12,11 @@ import emailjs from "@emailjs/browser";
 // }
 
 function ContactForm() {
-
+    const captchaRef = useRef();
+    const [submitReady, setSubmitReady] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState("idle");
+  const [captcha, setCaptcha] = useState(false);
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
-
   const [formData, setFromData] = useState({
     user_name: "",
     user_link: "",
@@ -28,9 +30,14 @@ function ContactForm() {
 
 
 
-  const handgleDisable = () => {
-
-  }
+ 
+    const onCaptchaChange = (e) => {
+    if (e) {
+      setCaptcha(true);
+    } else {
+      setCaptcha(false);
+    }
+  };
 
 
   //send mail
@@ -38,6 +45,7 @@ function ContactForm() {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setSubmitStatus("loading");
 
     emailjs.sendForm(
       "service_8vwl9zk",
@@ -47,28 +55,26 @@ function ContactForm() {
     )
       .then(
         (result) => {
-
-          setIsButtonDisabled(false);
-          setFromData({
-            user_name: "",
-            user_link: "",
-            user_subject: "",
-            user_message: ""
-          })
-
-
-          alert(result.text);
-
+        setTimeout(() => {
+          setSubmitStatus("idle");
+            setFromData({
+                  user_name: "",
+                  user_link: "",
+                  user_subject: "",
+                  user_message: ""
+                })
+            }, 3000);
+          
+          
         },
         (error) => {
-          alert(error.text);
+          setSubmitStatus("idle");
+          
         }
       );
   };
 
-  const handleButton = () => {
-    setIsButtonDisabled(true)
-  }
+
 
 
   //enable button aagain 
@@ -77,7 +83,7 @@ function ContactForm() {
 
   return (
     <div className="flex-grow relative ">
-      <form  netlify-honeypot="bot-field"   data-netlify-recaptcha="true"  name="contact"  method="POST" data-netlify="true"  action="" className="flex flex-grow flex-col -z-10" ref={form} onSubmit={sendEmail}>
+      <form  netlify-honeypot="bot-field"     name="contact"  method="POST" data-netlify="true"  action="" className="flex flex-grow flex-col -z-10" ref={form} onSubmit={sendEmail}>
         <motion.div className="flex flex-col gap-y-1 flex-grow">
           <label htmlFor="name">Name *</label>
           <input
@@ -137,10 +143,14 @@ function ContactForm() {
     </label>
   </p>
 
-    <div data-netlify-recaptcha="true"></div>
+ 
 
         <motion.div className="grid w-full place-items-end flex-grow">
-          <button className="pbtn w-fit mt-8" type="submit" value="Send" onClick={handleButton} disabled={isButtonDisabled}>{isButtonDisabled ? 'Submitting...' : 'Submit '}</button>
+          <button className={(submitStatus=="loading")?`pbtn w-fit mt-8` : `desbtn w-fit mt-8`} type="submit" value="Send"  disabled={submitStatus === "loading"}> {submitStatus === "loading"
+            ? "Sending..."
+            : submitStatus === "success"
+            ? "Thankyou"
+            : "Submit"}</button>
         </motion.div>
       </form>
     </div>

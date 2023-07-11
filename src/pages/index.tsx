@@ -79,9 +79,10 @@ export default function Home({
                 stiffness: 260,
                 damping: 40,
               }}
+              className="sm:w-52"
             >
               <Link href="/contact">
-                <button className="pbtn">Let's work together</button>
+                <button className="pbtn ">Let's work together</button>
               </Link>
             </motion.div>
           </div>
