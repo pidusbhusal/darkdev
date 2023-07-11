@@ -147,7 +147,7 @@ function onChange(value) {
         </motion.div>
         <motion.div className="grid items-stretch gap-y-1 flex-grow  mt-6">
           <ReCAPTCHA
-            sitekey="6LclSxUnAAAAADFG-VLdYbQGCZWTwps-sPmKLlGH"
+            sitekey="6LdgXRUnAAAAAPZUDsXG5oo4gJvSV_WBiwRpR26v"
             onChange={onCaptchaChange}
             ref={captchaRef}
   />
