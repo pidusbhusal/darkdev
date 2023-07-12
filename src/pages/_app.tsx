@@ -4,6 +4,7 @@ import Layout from "@/components/layout";
 import Head from "next/head";
 import { useEffect } from "react";
 import HotjarLoader from "@/components/HotjarLoader";
+import GoogleTagManager from "@/components/GoogleTagManager";
 
 
 
@@ -25,6 +26,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Layout>
         <Component {...pageProps} />
         <HotjarLoader />
+        <GoogleTagManager />
       </Layout>
     </>
   );
