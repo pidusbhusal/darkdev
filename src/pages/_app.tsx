@@ -5,6 +5,9 @@ import Head from "next/head";
 import { useEffect } from "react";
 import HotjarLoader from "@/components/HotjarLoader";
 import GoogleTagManager from "@/components/GoogleTagManager";
+import NextNProgress from 'nextjs-progressbar';
+
+
 
 
 
@@ -24,6 +27,7 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
 
       <Layout>
+        <NextNProgress color="#254FD9" />
         <Component {...pageProps} />
         <HotjarLoader />
         <GoogleTagManager />
