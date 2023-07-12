@@ -23,7 +23,7 @@ function TestimonialCard({ copy, image, name, post, index }: testimonialProps) {
 
             <div className='flex gap-3'>
                 <div className="profile rounded-full overflow-hidden -z-20 w-[50px] h-[50px]">
-                    <Image src={image} width={90} height={90} />
+                    <Image alt='Image of Sudip Testimonials' src={image} width={90} height={90} />
                 </div>
                 <div>
                     <h3 className=''>{name}</h3>

@@ -20,6 +20,8 @@ const skills = [
   "Branding",
 ];
 
+
+
 export default function Home({
   projects,
   testimonials,
@@ -30,6 +32,8 @@ export default function Home({
   return (
     <>
       <Head>
+        <meta name="title" content="Pidus Bhusal | Ui Ux Designer" />
+        <meta name="description" content="Pidus Bhusal is an Ui/Ux designer based on Toronto,Canada. Pidus can help you in designing Website, Mobile App and Brand Identity. He has about more then 2 Years of experinece." />
         <title>Pidus Bhusal</title>
       </Head>
       <div className="herosection grid items-center py-32 md:py-56 md:pt-16 bg-noise ">
@@ -264,6 +268,7 @@ export default function Home({
                 "https://res.cloudinary.com/dgjcimkmq/image/upload/v1688630888/Pidus_d3exvm_380e67a.webp"
               }
               width={500}
+              alt="Pidus Bhusal Sudip Bhusal"
               height={600}
               layout="responsive"
             ></Image>

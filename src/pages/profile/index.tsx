@@ -37,7 +37,7 @@ export default function Profile({
             viewport={{ once: true, amount: 0.01 }}
           >
             <Image
-              alt="me"
+              alt="Image of Pidus Bhusal"
               className="relative"
               src={
                 "https://res.cloudinary.com/dgjcimkmq/image/upload/v1688630897/kytjg8jxi2ivzixjxq9i_39476a5.webp"
