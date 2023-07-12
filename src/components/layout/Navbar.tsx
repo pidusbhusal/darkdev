@@ -82,9 +82,9 @@ function Navbar() {
         className=" sticky top-0 py-6 w-full   hidden md:block"
       >
         <nav className={`flex container  justify-between `}>
-          <div className="w-16 flex items-center">
+          <div className=" flex items-center">
             <Link href={"/"}>
-              <Image src={"Pidus_logo.svg"} alt="Pidus Logo" width={500} height={500} />
+              <Image src={"Pidus_logo.svg"} alt="Pidus Logo" width={125} height={500} />
             </Link>
           </div>
 
