@@ -30,6 +30,12 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any" />
         <meta property="og:pidus.net" content="Pidus Bhusal | Ui/Ux Designer" />
         <meta property="og:locale" content="en-US" />
+        <meta property="og:image" content="https://pidus.net/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdgjcimkmq%2Fimage%2Fupload%2Fv1688630888%2FPidus_d3exvm_380e67a.webp&w=1920&q=75"/>
+          <meta property="og:image:secure_url" content="https://pidus.net/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdgjcimkmq%2Fimage%2Fupload%2Fv1688630888%2FPidus_d3exvm_380e67a.webp&w=1920&q=75"/>
+            <meta property="og:title" content="Pidus Bhusal | Ui Ux Designer"/>
+              <meta property="og:description" content="Pidus Bhusal is a Ui/Ux designer based in Toronto, Canada. Pidus can help you in designing Website, Mobile App, and Brand Identity. He has over 2 years of experience."/>
+                <meta property="og:url" content="https://pidus.net"/>
+                  <meta property="og:type" content="website"/>
 
       </Head>
 
