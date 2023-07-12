@@ -136,8 +136,8 @@ export default function Profile({
                 viewport={{ once: true, amount: 0.01 }}
                 className="max-w-sm leading-normal mt-4"
               >
-                I take pleasure in devising practical solutions for distinct
-                challenges, and these are abilities that I have acquired
+                I take pleasure in learning new things and diving into new domain for distinct challages.
+                These are abilities that I have acquired
                 throughout my professional journey.
               </motion.p>
             </div>

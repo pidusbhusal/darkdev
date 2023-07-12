@@ -20,7 +20,7 @@ function Testimonials({ data }: { data: TestimonialProps[] }) {
           }}
           viewport={{ once: true, amount: 0.01 }}
         >
-          ABOUT ME
+          RECOMENDATIONS
         </motion.span>
         <motion.h2
           className=" text-2xl font-Reg  max-w-[500px] "
@@ -35,7 +35,7 @@ function Testimonials({ data }: { data: TestimonialProps[] }) {
           }}
           viewport={{ once: true, amount: 0.01 }}
         >
-          Recomendation
+          Testimonials
         </motion.h2>
       </div>
       <div className="testimonials grid md:grid-cols-3 mt-20  items-start gap-14 md:gap-10">

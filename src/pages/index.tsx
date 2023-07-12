@@ -214,24 +214,7 @@ export default function Home({
               }}
               viewport={{ once: true, amount: 0.01 }}
             >
-              Hello, I'm Sudip, but you can call me Pidus. I'm a creative
-              professional with a passion for designing user-centered digital
-              experiences. I am a life long learner who ‘ve been doing design
-              work for many years now and have learned a lot along the way. I'm
-              always striving to improve myself and learn new skills. With my
-              background in graphic design, I bring a unique perspective to
-              branding and marketing that allows me to create cohesive and
-              effective designs. I also have experience in templating and
-              front-end development, giving me a solid understanding of the
-              technical side of design.Over the years, I've helped businesses
-              develop their brand identity and solve their design challenges
-              through strategic and innovative design solutions. My goal is
-              always to create interactive experiences that are beautiful,
-              intuitive, and meaningful. I believe that good design is not just
-              about making things look pretty, but about making them work better
-              for the user.So, if you're looking for a designer who can bring
-              your ideas to life and elevate your digital presence, let's
-              connect and see how we can work together.
+              Hello, I’m Sudip Bhusal known more as Pidus. I’m a UI/UX designer with a passion for learning and creating. I have years of experience in designing user-friendly and attractive interfaces for various platforms. I enjoy exploring new domains and acquiring new skills to enhance my design capabilities. I can also handle graphic design and front-end development to ensure that my designs are fully realized and functional. My design philosophy is to align with your business goals and deliver value to your customers. If you’re looking for a UI/UX designer who can elevate your digital presence, let’s connect and collaborate.
             </motion.p>
             <motion.button
               initial={{ opacity: 0, y: 30 }}
