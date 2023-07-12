@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 const navItems = ["Home", "About", "Projects", "Contact"];
-import Logo from "./Logo";
+
 
 // Define the animation variants for the menu
 const navbarVariants = {
@@ -81,9 +82,9 @@ function Navbar() {
         className=" sticky top-0 py-6 w-full   hidden md:block"
       >
         <nav className={`flex container  justify-between `}>
-          <div className="w-16">
+          <div className="w-16 flex items-center">
             <Link href={"/"}>
-              <Logo />
+              <Image src={"Pidus_logo.svg"} alt="Pidus Logo" width={500} height={500} />
             </Link>
           </div>
 
@@ -125,9 +126,9 @@ function Navbar() {
         <div className="flex justify-between">
           <nav className={`${isActive ? "" : "h-fit"} fixed inset-0 z-50`}>
             <div className="flex w-full justify-between px-4 py-6 absolute">
-              <div className="w-16 z-100 ">
+              <div className=" z-100 ">
                 <Link href={"/"}>
-                  <Logo />
+                  <Image src={"Pidus_logo.svg"} alt="Pidus Logo" width={125} height={100} />
                 </Link>
               </div>
 

@@ -227,9 +227,10 @@ export default function Home({
                 damping: 40,
               }}
               viewport={{ once: true, amount: 0.01 }}
-              className=" p-2  mt-6 border-b-2"
+              className=" py-2  mt-6 border-b-2"
             >
-              Download Resume
+              <a href="Resume_Pidus.pdf" download={true}>Download Resume</a>
+
             </motion.button>
           </div>
           <motion.div
