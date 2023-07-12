@@ -34,6 +34,11 @@ export default function Home({
       <Head>
         <meta name="title" content="Pidus Bhusal | Ui Ux Designer" />
         <meta name="description" content="Pidus Bhusal is an Ui/Ux designer based on Toronto,Canada. Pidus can help you in designing Website, Mobile App and Brand Identity. He has about more then 2 Years of experinece." />
+        <meta name="keywords" content="pidus, ui ux designer, web designer, ui ux designer, canada, toronto, app designer, web developer"></meta>
+        <meta name="robots" content="index, follow">
+        </meta>
+        <meta property="og:image" content="https://pidus.net/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdgjcimkmq%2Fimage%2Fupload%2Fv1688630888%2FPidus_d3exvm_380e67a.webp&w=1920&q=75"></meta>
+        <meta property="og:image:secure_url" content="https://pidus.net/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdgjcimkmq%2Fimage%2Fupload%2Fv1688630888%2FPidus_d3exvm_380e67a.webp&w=1920&q=75"></meta>
         <title>Pidus Bhusal</title>
       </Head>
       <div className="herosection grid items-center py-32 md:py-56 md:pt-16 bg-noise ">
