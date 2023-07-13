@@ -114,7 +114,7 @@ export default function Home({
                 viewport={{ once: true, amount: 0.01 }}
                 className=" py-2   border-b-2"
               >
-                <Link href="/profile" >See what I can do</Link>
+                <Link href="/profile" >Where can I help you</Link>
 
               </motion.button>
             </div>
