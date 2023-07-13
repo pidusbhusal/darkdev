@@ -67,7 +67,7 @@ export default function Home({
               >
                 Designing delightful solutions
               </motion.h1>
-              <motion.p
+              <motion.h2
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
@@ -77,31 +77,48 @@ export default function Home({
                   stiffness: 260,
                   damping: 40,
                 }}
-                className="max-w-3xl leading-normal"
+                className="max-w-2xl leading-normal text-[#bcbcbc]"
               >
-                Hi, I'm Sudip, a UI/UX Designer with a strong background in
-                Graphic Designing and some experience in Front-end development.
-                I specialize in creating visually appealing and user-friendly
-                digital products that delight not only you but also your
-                customers . Let's collaborate to bring your ideas to life!
-              </motion.p>
+                Hi, I'm Sudip Bhusal, also known as Pidus. I'm a UI/UX designer with a proven track record of delivering results. I’m always eager to learn and push my limits. Get in touch with me today to find out how I can help you with your next project.
+
+
+              </motion.h2>
             </div>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: 0.3,
-                duration: 0.3,
-                type: "spring",
-                stiffness: 260,
-                damping: 40,
-              }}
-              className="sm:w-52"
-            >
-              <Link href="/contact">
-                <button className="pbtn ">Let's work together</button>
-              </Link>
-            </motion.div>
+            <div className="flex gap-8">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: 0.3,
+                  duration: 0.3,
+                  type: "spring",
+                  stiffness: 260,
+                  damping: 40,
+                }}
+                className="sm:w-52"
+              >
+                <Link href="/contact">
+                  <button className="pbtn ">Let's work together</button>
+                </Link>
+              </motion.div>
+              <motion.button
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: 0.4,
+                  duration: 0.3,
+                  type: "spring",
+                  stiffness: 260,
+                  damping: 40,
+                }}
+                viewport={{ once: true, amount: 0.01 }}
+                className=" py-2   border-b-2"
+              >
+                <Link href="/profile" >See what I can do</Link>
+
+              </motion.button>
+            </div>
+
           </div>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -166,10 +183,7 @@ export default function Home({
             viewport={{ once: true, amount: 0.01 }}
             className="max-w-xl leading-normal mt-2"
           >
-            My passion lies in crafting immersive experiences that seamlessly
-            blend form and function. From intuitive interfaces to visually
-            stunning designs, I strive to create solutions that not only
-            captivate, but also serve a purpose.{" "}
+            I've helped small businesses and big corporations alike realize their visions and create concrete designs that meet their needs. Some of these success stories are given belows :
           </motion.p>
 
           <div className="my-20 xl:mb-60">
@@ -215,7 +229,7 @@ export default function Home({
               </motion.h2>
             </div>
             <motion.p
-              className="mt-4"
+              className="mt-4 "
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{
@@ -245,6 +259,7 @@ export default function Home({
               <a href="Resume_Pidus.pdf" download={true}>Download Resume</a>
 
             </motion.button>
+
           </div>
           <motion.div
             className="w-72  m-auto rounded overflow-hidden relative"

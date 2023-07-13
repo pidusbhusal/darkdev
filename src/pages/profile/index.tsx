@@ -62,7 +62,7 @@ export default function Profile({
               viewport={{ once: true, amount: 0.01 }}
               className="text-3xl max-w-xl sm:text-4xl lg:text-7xl lg:leading-tight  "
             >
-              Hello! The name is Pidus
+              Solutions with Personal Touch
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 30 }}
@@ -77,11 +77,13 @@ export default function Profile({
               viewport={{ once: true, amount: 0.01 }}
               className=" leading-normal max-w-xl mt-4 mb-12"
             >
-              Hi, I'm Sudip, a UI/UX Designer with a strong background in
-              Graphic Designing and some experience in Front-end development. I
-              specialize in creating visually appealing and user-friendly
-              digital products that delight not only you but also your customers
-              . Let's collaborate to bring your ideas to life!
+              Hello! I am Sudip Bhusal. Online, I use the name Pidus, which is the inverse of Sudip. This name represents my design philosophy of viewing things from differnet perspective.
+
+              I use this philosophy to help my clients boost their ROI by finding creative solutions that enhance their value proposition and enhance their hidden gem.
+
+
+
+
             </motion.p>
 
             <motion.div
