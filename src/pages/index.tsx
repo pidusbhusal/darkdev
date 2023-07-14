@@ -105,7 +105,7 @@ export default function Home({
                 find out how I can help you with your next project.
               </motion.h2>
             </div>
-            <div className="flex gap-8">
+            <div className="flex flex-wrap gap-8">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}

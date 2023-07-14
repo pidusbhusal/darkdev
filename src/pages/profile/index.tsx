@@ -41,13 +41,11 @@ export default function Profile({
             <Image
               alt="Image of Pidus Bhusal"
               className="relative"
-              src={
-                aboutimage[0]?.myImage?.image?.sourceUrl
-              }
+              src={aboutimage[0]?.myImage?.image?.sourceUrl}
               width={500}
               height={600}
               layout="responsive"
-              priority
+              priority={true}
             />
           </motion.div>
           <div>
@@ -79,13 +77,11 @@ export default function Profile({
               viewport={{ once: true, amount: 0.01 }}
               className=" leading-normal max-w-xl mt-4 mb-12"
             >
-              Hello! I am Sudip Bhusal. Online, I use the name Pidus, which is the inverse of Sudip. This name represents my design philosophy of viewing things from differnet perspective.
-
-              I use this philosophy to help my clients boost their ROI by finding creative solutions that enhance their value proposition and enhance their hidden gem.
-
-
-
-
+              Hello! I am Sudip Bhusal. Online, I use the name Pidus, which is
+              the inverse of Sudip. This name represents my design philosophy of
+              viewing things from differnet perspective. I use this philosophy
+              to help my clients boost their ROI by finding creative solutions
+              that enhance their value proposition and enhance their hidden gem.
             </motion.p>
 
             <motion.div
@@ -140,9 +136,9 @@ export default function Profile({
                 viewport={{ once: true, amount: 0.01 }}
                 className="max-w-sm leading-normal mt-4"
               >
-                I take pleasure in learning new things and diving into new domain for distinct challages.
-                These are abilities that I have acquired
-                throughout my professional journey.
+                I take pleasure in learning new things and diving into new
+                domain for distinct challages. These are abilities that I have
+                acquired throughout my professional journey.
               </motion.p>
             </div>
             <div className="md:float">
@@ -184,17 +180,17 @@ export async function getServerSideProps() {
           }
         }
         myImages {
-            nodes {
-              id
-              title
-              myImage {
-                image{
-                  sourceUrl
-                }
+          nodes {
+            id
+            title
+            myImage {
+              image {
+                sourceUrl
               }
             }
           }
-        
+        }
+
         testimonials {
           nodes {
             title
@@ -209,7 +205,7 @@ export async function getServerSideProps() {
             databaseId
           }
         }
-      }   
+      }
     `,
   });
   return {
