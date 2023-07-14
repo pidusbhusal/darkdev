@@ -20,8 +20,6 @@ const skills = [
   "Branding",
 ];
 
-
-
 export default function Home({
   projects,
   testimonials,
@@ -35,18 +33,38 @@ export default function Home({
     <>
       <Head>
         <meta name="title" content="Pidus Bhusal | Ui Ux Designer" />
-        <meta name="description" content="Pidus Bhusal is an Ui/Ux designer based on Toronto,Canada. Pidus can help you in designing Website, Mobile App and Brand Identity. He has about more then 2 Years of experinece." />
-        <meta name="keywords" content="pidus, ui ux designer, web designer, ui ux designer, canada, toronto, app designer, web developer"></meta>
-        <meta name="robots" content="index, follow">
-        </meta>
-        <meta property="og:image" content="https://pidus.net/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdgjcimkmq%2Fimage%2Fupload%2Fv1688630888%2FPidus_d3exvm_380e67a.webp&w=1920&q=75"></meta>
-        <meta property="og:image:secure_url" content="https://pidus.net/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdgjcimkmq%2Fimage%2Fupload%2Fv1688630888%2FPidus_d3exvm_380e67a.webp&w=1920&q=75"></meta>
+        <meta
+          name="description"
+          content="Pidus Bhusal is an Ui/Ux designer based on Toronto,Canada. Pidus can help you in designing Website, Mobile App and Brand Identity. He has about more then 2 Years of experinece."
+        />
+        <meta
+          name="keywords"
+          content="pidus, ui ux designer, web designer, ui ux designer, canada, toronto, app designer, web developer"
+        ></meta>
+        <meta name="robots" content="index, follow"></meta>
+        <meta
+          property="og:image"
+          content="https://pidus.net/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdgjcimkmq%2Fimage%2Fupload%2Fv1688630888%2FPidus_d3exvm_380e67a.webp&w=1920&q=75"
+        ></meta>
+        <meta
+          property="og:image:secure_url"
+          content="https://pidus.net/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdgjcimkmq%2Fimage%2Fupload%2Fv1688630888%2FPidus_d3exvm_380e67a.webp&w=1920&q=75"
+        ></meta>
         <meta property="og:pidus.net" content="Pidus Bhusal | Ui/Ux Designer" />
         <meta property="og:locale" content="en-US" />
-        <meta property="og:image" content="https://pidus.net/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdgjcimkmq%2Fimage%2Fupload%2Fv1688630888%2FPidus_d3exvm_380e67a.webp&w=1920&q=75" />
-        <meta property="og:image:secure_url" content="https://pidus.net/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdgjcimkmq%2Fimage%2Fupload%2Fv1688630888%2FPidus_d3exvm_380e67a.webp&w=1920&q=75" />
+        <meta
+          property="og:image"
+          content="https://pidus.net/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdgjcimkmq%2Fimage%2Fupload%2Fv1688630888%2FPidus_d3exvm_380e67a.webp&w=1920&q=75"
+        />
+        <meta
+          property="og:image:secure_url"
+          content="https://pidus.net/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdgjcimkmq%2Fimage%2Fupload%2Fv1688630888%2FPidus_d3exvm_380e67a.webp&w=1920&q=75"
+        />
         <meta property="og:title" content="Pidus Bhusal | Ui Ux Designer" />
-        <meta property="og:description" content="Pidus Bhusal is a Ui/Ux designer based in Toronto, Canada. Pidus can help you in designing Website, Mobile App, and Brand Identity. He has over 2 years of experience." />
+        <meta
+          property="og:description"
+          content="Pidus Bhusal is a Ui/Ux designer based in Toronto, Canada. Pidus can help you in designing Website, Mobile App, and Brand Identity. He has over 2 years of experience."
+        />
         <meta property="og:url" content="https://pidus.net" />
         <meta property="og:type" content="website" />
         <title>Pidus Bhusal</title>
@@ -81,9 +99,10 @@ export default function Home({
                 }}
                 className="max-w-2xl leading-normal text-[#bcbcbc]"
               >
-                Hi, I'm Sudip Bhusal, also known as Pidus. I'm a UI/UX designer with a proven track record of delivering results. I’m always eager to learn and push my limits. Get in touch with me today to find out how I can help you with your next project.
-
-
+                Hi, I'm Sudip Bhusal, also known as Pidus. I'm a UI/UX designer
+                with a proven track record of delivering results. I’m always
+                eager to learn and push my limits. Get in touch with me today to
+                find out how I can help you with your next project.
               </motion.h2>
             </div>
             <div className="flex gap-8">
@@ -103,24 +122,24 @@ export default function Home({
                   <button className="pbtn ">Let's work together</button>
                 </Link>
               </motion.div>
-              <motion.button
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{
-                  delay: 0.4,
-                  duration: 0.3,
-                  type: "spring",
-                  stiffness: 260,
-                  damping: 40,
-                }}
-                viewport={{ once: true, amount: 0.01 }}
-                className=" py-2   border-b-2"
-              >
-                <Link href="/profile" >Where can I help you</Link>
-
-              </motion.button>
+              <Link href="/profile">
+                <motion.button
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    delay: 0.3,
+                    duration: 0.3,
+                    type: "spring",
+                    stiffness: 260,
+                    damping: 40,
+                  }}
+                  viewport={{ once: true, amount: 0.01 }}
+                  className=" py-2   border-b-2"
+                >
+                  Where can I help you
+                </motion.button>
+              </Link>
             </div>
-
           </div>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -185,7 +204,9 @@ export default function Home({
             viewport={{ once: true, amount: 0.01 }}
             className="max-w-xl leading-normal mt-2"
           >
-            I've helped small businesses and big corporations alike realize their visions and create concrete designs that meet their needs. Some of these success stories are given belows :
+            I've helped small businesses and big corporations alike realize
+            their visions and create concrete designs that meet their needs.
+            Some of these success stories are given belows :
           </motion.p>
 
           <div className="my-20 xl:mb-60">
@@ -243,7 +264,16 @@ export default function Home({
               }}
               viewport={{ once: true, amount: 0.01 }}
             >
-              Hello, I’m Sudip Bhusal known more as Pidus. I’m a UI/UX designer with a passion for learning and creating. I have years of experience in designing user-friendly and attractive interfaces for various platforms. I enjoy exploring new domains and acquiring new skills to enhance my design capabilities. I can also handle graphic design and front-end development to ensure that my designs are fully realized and functional. My design philosophy is to align with your business goals and deliver value to your customers. If you’re looking for a UI/UX designer who can elevate your digital presence, let’s connect and collaborate.
+              Hello, I’m Sudip Bhusal known more as Pidus. I’m a UI/UX designer
+              with a passion for learning and creating. I have years of
+              experience in designing user-friendly and attractive interfaces
+              for various platforms. I enjoy exploring new domains and acquiring
+              new skills to enhance my design capabilities. I can also handle
+              graphic design and front-end development to ensure that my designs
+              are fully realized and functional. My design philosophy is to
+              align with your business goals and deliver value to your
+              customers. If you’re looking for a UI/UX designer who can elevate
+              your digital presence, let’s connect and collaborate.
             </motion.p>
             <motion.button
               initial={{ opacity: 0, y: 30 }}
@@ -258,10 +288,10 @@ export default function Home({
               viewport={{ once: true, amount: 0.01 }}
               className=" py-2  mt-6 border-b-2"
             >
-              <a href="Resume_Pidus.pdf" download={true}>Download Resume</a>
-
+              <a href="Resume_Pidus.pdf" download={true}>
+                Download Resume
+              </a>
             </motion.button>
-
           </div>
           <motion.div
             className="w-72  m-auto rounded overflow-hidden relative"
@@ -278,9 +308,7 @@ export default function Home({
           >
             <Image
               className="relative"
-              src={
-                indeximage[1]?.myImage?.image?.sourceUrl
-              }
+              src={indeximage[1]?.myImage?.image?.sourceUrl}
               width={500}
               alt="Image of Pidus Bhusal or Sudip Bhusal"
               height={600}
@@ -343,17 +371,17 @@ export async function getServerSideProps() {
             }
           }
         }
-         myImages {
-            nodes {
-              id
-              title
-              myImage {
-                image{
-                  sourceUrl
-                }
+        myImages {
+          nodes {
+            id
+            title
+            myImage {
+              image {
+                sourceUrl
               }
             }
           }
+        }
         testimonials {
           nodes {
             title
