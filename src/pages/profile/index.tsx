@@ -6,13 +6,15 @@ import Skillcard from "@/components/Skillcard";
 import { motion } from "framer-motion";
 import { gql } from "@apollo/client";
 import Head from "next/head";
-import { SkillsProps, TestimonialProps } from "@/types";
+import { SkillsProps, TestimonialProps, ImagesProps } from "@/types";
 import client from "@/lib/apollo";
 
 export default function Profile({
   skills,
   testimonials,
+  aboutimage,
 }: {
+  aboutimage: ImagesProps[];
   skills: SkillsProps[];
   testimonials: TestimonialProps[];
 }) {
@@ -40,7 +42,7 @@ export default function Profile({
               alt="Image of Pidus Bhusal"
               className="relative"
               src={
-                "https://res.cloudinary.com/dgjcimkmq/image/upload/v1688630897/kytjg8jxi2ivzixjxq9i_39476a5.webp"
+                aboutimage[0]?.myImage?.image?.sourceUrl
               }
               width={500}
               height={600}
@@ -181,6 +183,18 @@ export async function getServerSideProps() {
             }
           }
         }
+        myImages {
+            nodes {
+              id
+              title
+              myImage {
+                image{
+                  sourceUrl
+                }
+              }
+            }
+          }
+        
         testimonials {
           nodes {
             title
@@ -195,11 +209,12 @@ export async function getServerSideProps() {
             databaseId
           }
         }
-      }
+      }   
     `,
   });
   return {
     props: {
+      aboutimage: data?.myImages?.nodes,
       skills: data?.skills?.nodes,
       testimonials: data?.testimonials?.nodes,
     },

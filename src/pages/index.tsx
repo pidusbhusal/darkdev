@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import Head from "next/head";
 import client from "@/lib/apollo";
 import { gql } from "@apollo/client";
-import { ProjectProps, TestimonialProps } from "@/types";
+import { ProjectProps, TestimonialProps, ImagesProps } from "@/types";
 
 const skills = [
   "Front-end",
@@ -25,7 +25,9 @@ const skills = [
 export default function Home({
   projects,
   testimonials,
+  indeximage,
 }: {
+  indeximage: ImagesProps[];
   projects: ProjectProps[];
   testimonials: TestimonialProps[];
 }) {
@@ -277,10 +279,10 @@ export default function Home({
             <Image
               className="relative"
               src={
-                "https://res.cloudinary.com/dgjcimkmq/image/upload/v1688630888/Pidus_d3exvm_380e67a.webp"
+                indeximage[1]?.myImage?.image?.sourceUrl
               }
               width={500}
-              alt="Pidus Bhusal Sudip Bhusal"
+              alt="Image of Pidus Bhusal or Sudip Bhusal"
               height={600}
               layout="responsive"
             ></Image>
@@ -341,6 +343,17 @@ export async function getServerSideProps() {
             }
           }
         }
+         myImages {
+            nodes {
+              id
+              title
+              myImage {
+                image{
+                  sourceUrl
+                }
+              }
+            }
+          }
         testimonials {
           nodes {
             title
@@ -360,6 +373,7 @@ export async function getServerSideProps() {
   });
   return {
     props: {
+      indeximage: data?.myImages?.nodes,
       projects: data?.projects?.nodes,
       testimonials: data?.testimonials?.nodes,
     },

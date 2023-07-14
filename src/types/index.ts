@@ -37,3 +37,14 @@ export interface SkillsProps {
     }[];
   };
 }
+
+export interface ImagesProps { 
+    id : string,
+    title: string,
+    myImage:{
+      image:{
+        sourceUrl:string
+      }
+    }}
+             
+          
