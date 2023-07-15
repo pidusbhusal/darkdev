@@ -35,7 +35,7 @@ export default function Home({
         <meta name="title" content="Pidus Bhusal | Ui Ux Designer" />
         <meta
           name="description"
-          content="Pidus Bhusal is an Ui/Ux designer based on Toronto,Canada. Pidus can help you in designing Website, Mobile App and Brand Identity. He has about more then 2 Years of experinece."
+          content="Pidus Bhusal is an UI/UX designer based on Toronto, Canada. Pidus can help you in designing Website, Mobile App and Brand Identity. He has about more then 2 Years of experinece."
         />
         <meta
           name="keywords"
@@ -63,7 +63,7 @@ export default function Home({
         <meta property="og:title" content="Pidus Bhusal | Ui Ux Designer" />
         <meta
           property="og:description"
-          content="Pidus Bhusal is a Ui/Ux designer based in Toronto, Canada. Pidus can help you in designing Website, Mobile App, and Brand Identity. He has over 2 years of experience."
+          content="Pidus Bhusal is a Ui/Ux designer based in Toronto, Canada. He has completed more then 50 project sucessfully. Pidus can help you in designing Website, Mobile App, and Brand Identity."
         />
         <meta property="og:url" content="https://pidus.net" />
         <meta property="og:type" content="website" />
@@ -99,10 +99,12 @@ export default function Home({
                 }}
                 className="max-w-2xl leading-normal text-[#bcbcbc]"
               >
-                Hi, I'm Sudip Bhusal, also known as Pidus. I'm a UI/UX designer
-                with a proven track record of delivering results. I’m always
-                eager to learn and push my limits. Get in touch with me today to
-                find out how I can help you with your next project.
+                Hello, I'm Sudip Bhusal, also known as Pidus, a results-driven
+                UI/UX designer. With 50+ successful projects under my belt, I am
+                dedicated to helping clients achieve their goals. I am always
+                eager to learn and push my limits to deliver exceptional
+                results. Contact me today to discover how I can contribute to
+                your next project and optimize your user experience.
               </motion.h2>
             </div>
             <div className="flex flex-wrap gap-8">
