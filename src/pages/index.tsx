@@ -102,7 +102,7 @@ export default function Home({
                 Hello, I'm Sudip Bhusal, also known as Pidus, a results-driven
                 UI/UX designer. With 50+ successful projects under my belt, I am
                 dedicated to helping clients achieve their goals. I am always
-                eager to learn and push my limits to deliver exceptional 
+                eager to learn and push my limits to deliver exceptional
                 results. Contact me today to discover how I can contribute to
                 your next project and optimize your user experience.
               </motion.h2>
@@ -212,7 +212,9 @@ export default function Home({
           </motion.p>
 
           <div className="my-20 xl:mb-60">
-            <ProjectCollections data={projects}></ProjectCollections>
+            <ProjectCollections
+              data={projects.slice(0, 4)}
+            ></ProjectCollections>
           </div>
         </div>
       </div>
