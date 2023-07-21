@@ -2,9 +2,7 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import Layout from "@/components/layout";
 import Head from "next/head";
-import { useEffect } from "react";
 import HotjarLoader from "@/components/HotjarLoader";
-import GoogleTagManager from "@/components/GoogleTagManager";
 import NextNProgress from "nextjs-progressbar";
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -69,7 +67,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <NextNProgress color="#254FD9" />
         <Component {...pageProps} />
         <HotjarLoader />
-        <GoogleTagManager />
+      
       </Layout>
     </>
   );

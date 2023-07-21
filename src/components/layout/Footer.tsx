@@ -15,7 +15,7 @@ function Footer() {
         stiffness: 260,
         damping: 40,
       }}
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.05 }}
       className=" relative pb-20 "
     >
       <div className="container flex flex-wrap gap-24 justify-between ">

@@ -6,7 +6,6 @@ import Image from "next/image";
 
 const navItems = ["Home", "About", "Projects", "Contact"];
 
-
 // Define the animation variants for the menu
 const navbarVariants = {
   open: {
@@ -84,33 +83,41 @@ function Navbar() {
         <nav className={`flex container  justify-between `}>
           <div className=" flex items-center">
             <Link href={"/"}>
-              <Image src={"Pidus_logo.svg"} alt="Pidus Logo" width={125} height={500} />
+              <Image
+                src={"Pidus_logo.svg"}
+                alt="Pidus Logo"
+                width={125}
+                height={500}
+              />
             </Link>
           </div>
 
           <div className="flex  items-center ">
             <Link
               href="/"
-              className={`${router.pathname === "/" ? "border-b-2" : "border-b-transparent"
-                } mr-8 `}
+              className={`${
+                router.pathname === "/" ? "border-b-2" : "border-b-transparent"
+              } mr-8 `}
             >
               <button className="navbtn">Home</button>
             </Link>
             <Link
               href="/work"
-              className={`${router.pathname === "/work"
-                ? "border-b-2"
-                : "border-b-transparent"
-                } mx-8`}
+              className={`${
+                router.pathname === "/work"
+                  ? "border-b-2"
+                  : "border-b-transparent"
+              } mx-8`}
             >
               <button className="navbtn">Work</button>
             </Link>
             <Link
               href="/profile"
-              className={`${router.pathname === "/profile"
-                ? "border-b-2"
-                : "border-b-transparent"
-                } mx-8`}
+              className={`${
+                router.pathname === "/profile"
+                  ? "border-b-2"
+                  : "border-b-transparent"
+              } mx-8`}
             >
               <button className="navbtn">Profile</button>
             </Link>
@@ -124,11 +131,28 @@ function Navbar() {
       {/* mobile version */}
       <div className="md:hidden  z-50  py-14">
         <div className="flex justify-between">
-          <nav className={`${isActive ? "" : "h-fit"} fixed inset-0 z-50`}>
-            <div className="flex w-full justify-between px-4 py-6 absolute">
+          <nav
+            className={`${
+              isActive ? "" : "h-fit bg-black backdrop-blur-sm"
+            } fixed inset-0 z-50`}
+          >
+            <motion.div
+              className="flex w-full justify-between px-4 pt-6 pb-2 absolute "
+              initial={{ backgroundColor: "transparent" }}
+              animate={{
+                backgroundColor: scrolled ? "rgb(5, 6, 10 , 1)" : "transparent",
+                boxShadow: scrolled ? "0 1px 2px rgba(0, 0, 0, 0.5)" : "none",
+                backdropFilter: scrolled ? "blur(146.909px)" : "",
+              }}
+            >
               <div className=" z-100 ">
                 <Link href={"/"}>
-                  <Image src={"Pidus_logo.svg"} alt="Pidus Logo" width={125} height={100} />
+                  <Image
+                    src={"Pidus_logo.svg"}
+                    alt="Pidus Logo"
+                    width={125}
+                    height={100}
+                  />
                 </Link>
               </div>
 
@@ -170,7 +194,7 @@ function Navbar() {
                   )}
                 </button>
               </div>
-            </div>
+            </motion.div>
 
             {isActive ? (
               <motion.div
@@ -200,32 +224,36 @@ function Navbar() {
                   <Link
                     href="/"
                     onClick={handleClick}
-                    className={`${router.pathname === "/" ? "bg-gray-900 " : ""
-                      } reponsiveNavBtn`}
+                    className={`${
+                      router.pathname === "/" ? "bg-gray-900 " : ""
+                    } reponsiveNavBtn`}
                   >
                     Home
                   </Link>
                   <Link
                     href="/work"
                     onClick={handleClick}
-                    className={`${router.pathname === "/work" ? "bg-gray-900" : ""
-                      } reponsiveNavBtn`}
+                    className={`${
+                      router.pathname === "/work" ? "bg-gray-900" : ""
+                    } reponsiveNavBtn`}
                   >
                     Work
                   </Link>
                   <Link
                     href="/profile"
                     onClick={handleClick}
-                    className={`${router.pathname === "/profile" ? "bg-gray-900" : ""
-                      } reponsiveNavBtn`}
+                    className={`${
+                      router.pathname === "/profile" ? "bg-gray-900" : ""
+                    } reponsiveNavBtn`}
                   >
                     Profile
                   </Link>
                   <Link
                     href="/contact"
                     onClick={handleClick}
-                    className={`${router.pathname === "/contact" ? "bg-gray-900" : ""
-                      } reponsiveNavBtn`}
+                    className={`${
+                      router.pathname === "/contact" ? "bg-gray-900" : ""
+                    } reponsiveNavBtn`}
                   >
                     <button className="pbtn">Let's work together</button>
                   </Link>
@@ -235,7 +263,7 @@ function Navbar() {
           </nav>
         </div>
       </div>
-    </div >
+    </div>
   );
 }
 
