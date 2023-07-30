@@ -66,7 +66,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Layout>
         <NextNProgress color="#254FD9" />
         <Component {...pageProps} />
-        <HotjarLoader />
+        {/* <HotjarLoader /> */}
       </Layout>
     </>
   );
