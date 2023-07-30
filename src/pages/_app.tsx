@@ -6,7 +6,6 @@ import HotjarLoader from "@/components/HotjarLoader";
 import NextNProgress from "nextjs-progressbar";
 
 export default function App({ Component, pageProps }: AppProps) {
-  HotjarLoader();
   return (
     <>
       <Head>
@@ -67,6 +66,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Layout>
         <NextNProgress color="#254FD9" />
         <Component {...pageProps} />
+        <HotjarLoader />
       </Layout>
     </>
   );
