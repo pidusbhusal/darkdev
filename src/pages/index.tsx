@@ -216,6 +216,25 @@ export default function Home({
               data={projects.slice(0, 4)}
             ></ProjectCollections>
           </div>
+          <div className="w-full flex items-center justify-center pt-10">
+            <Link href="/work">
+              <motion.button
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: 0.3,
+                  duration: 0.3,
+                  type: "spring",
+                  stiffness: 260,
+                  damping: 40,
+                }}
+                viewport={{ once: true, amount: 0.01 }}
+                className=" py-2  m-auto mt-10 border-b-2"
+              >
+                View More Work
+              </motion.button>
+            </Link>
+          </div>
         </div>
       </div>
 
